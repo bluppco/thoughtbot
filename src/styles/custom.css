@@ -1,4 +1,4 @@
-@font-face {
+/* @font-face {
 
     font-family: 'Calibre Regular';
     src: url('/fonts/CalibreRegular.otf');
@@ -24,4 +24,14 @@
     font-family: 'Calibre Bold';
     src: url('/fonts/CalibreBold.otf');
 
-}
+} */
+
+@font-face {
+    font-family: 'Calibre';
+    src: local('Calibre Medium'), local('Calibre-Medium'),
+        url('Calibre-Medium.woff2') format('woff2'),
+        url('Calibre-Medium.woff') format('woff'),
+        url('Calibre-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+  }
