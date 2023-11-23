@@ -4,6 +4,11 @@ export default {
 	theme: {
 		extend: {
 
+			fontFamily: {
+
+				"calibre": [ "Calibre Regular", "Helvetica Neue", "Helvetica", "Arial", "sans-serif" ],
+			},
+
 			colors: {
 
 				"thoughtbot_light_red": "#e03131",
