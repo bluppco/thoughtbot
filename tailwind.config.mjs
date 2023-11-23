@@ -4,6 +4,14 @@ export default {
 	theme: {
 		extend: {
 
+			fontFamily: {
+
+				"calibre": [ "Calibre Regular", "Helvetica Neue", "Helvetica", "Arial", "sans-serif" ],
+				"calibre_medium": [ "Calibre Medium", "Helvetica Neue", "Helvetica", "Arial", "sans-serif" ],
+				"calibre_semibold": [ "Calibre Semibold", "Helvetica Neue", "Helvetica", "Arial", "sans-serif" ],
+				"calibre_bold": [ "Calibre Bold", "Helvetica Neue", "Helvetica", "Arial", "sans-serif" ],
+			},
+
 			colors: {
 
 				"thoughtbot_light_red": "#e03131",
