@@ -1,0 +1,42 @@
+---
+// ATOMS
+import ArrowCTA from "../../../atoms/ArrowCTA.astro"
+import H2 from "../../../atoms/H2.astro"
+import H3 from "../../../atoms/H3.astro"
+import H4 from "../../../atoms/H4.astro"
+import Paragraph from "../../../atoms/Paragraph.astro"
+import BusinessStages from "./BusinessStages.astro"
+---
+<section class="py-10 md:py-20">
+    <div class="space-y-4">
+        <H2 uppercase={ true } tracking_wide={ true }>our services</H2>
+        <H4>Your expert partners for building mission-driven products</H4>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-5 gap-10 pt-10">
+        <div class="md:col-span-3 space-y-10">
+            <Paragraph>Benefit from over 20 years of experience designing and building successful products. Whether you're a founder with a new idea, a product owner at a large enterprise, or somewhere in between, thoughtbot can help you solve meaningful problems with a design-led approach. Work with a small, dedicated team of project-focused product experts built to fit the needs of your project.</Paragraph>
+            <ArrowCTA>Learn more about our services</ArrowCTA>
+        </div>
+        <div class="md:col-span-2 md:pl-20 space-y-4">
+            <H3 uppercase={ true } tracking_wide={ true }>Specialty teams for every stage of your business:</H3>
+            <ul class="pl-4 md:pl-0">
+                <BusinessStages
+                    title="Ignite"
+                    description="Rapid validation & early product strategy"
+                />
+                <BusinessStages
+                    title="Lift Off"
+                    description="Roadmap planning & first version GTM"
+                />
+                <BusinessStages
+                    title="Boost"
+                    description="Team augmentation & process improvement"
+                />
+                <BusinessStages
+                    title="Mission Control"
+                    description="DevOps, SRE & audits"
+                />
+            </ul>
+        </div>
+    </div>
+</section>

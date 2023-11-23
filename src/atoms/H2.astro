@@ -1,0 +1,6 @@
+---
+const { center, uppercase, tracking_wide } = Astro.props
+---
+<h2 class={` ${ center ? "text-center" : "" } ${ uppercase ? "uppercase" : "" } ${ tracking_wide ? "tracking-widest" : "" } text-thoughtbot_gray font-calibre text-sm md:text-base`}>
+    <slot/>
+</h2>

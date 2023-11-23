@@ -1,0 +1,32 @@
+---
+// ATOMS
+import Paragraph from "../atoms/Paragraph.astro"
+import ArrowCTA from "../atoms/ArrowCTA.astro"
+
+const {
+
+    src,
+    alt,
+    title,
+    description,
+    cta
+
+} = Astro.props
+---
+<div class="space-y-4 rounded overflow-hidden">
+    <div class="overflow-hidden">
+        <img
+            src={ src }
+            alt={ alt }
+            class="w-full h-full object-cover"
+        />
+    </div>
+    <div class="space-y-8">
+        <div>
+            <span class="text-thoughtbot_slate font-medium text-lg font-calibre">{ title }</span>
+            <span> — </span>
+            <span class="text-thoughtbot_slate text-lg font-calibre">{ description }</span>
+        </div>
+        <ArrowCTA>{ cta }</ArrowCTA>
+    </div>
+</div>

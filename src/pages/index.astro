@@ -1,0 +1,43 @@
+---
+// LAYOUTS
+import Layout from "../layouts/Layout.astro"
+import Container from "../layouts/Container.astro"
+
+// COMPONENTS
+import Header from "../components/header/Header.astro"
+import Masthead from "../components/home/Masthead.astro"
+import OurServices from "../components/home/our-services/OurServices.astro"
+import Clients from "../components/home/Clients.astro"
+import ServiceHighlight from "../components/home/ServiceHighlight.astro"
+import CaseStudies from "../components/home/CaseStudies.astro"
+import ReviewBanner from "../components/home/ReviewBanner.astro"
+import WorkshopsAndEvents from "../components/home/WorkshopsAndEvents.astro"
+import OurCompany from "../components/home/OurCompany.astro"
+import Resources from "../components/home/Resources.astro"
+import Incubator from "../components/home/Incubator.astro"
+import LetsTalk from "../components/home/LetsTalk.astro"
+import Footer from "../components/footer/Footer.astro"
+---
+<Layout
+    title="Design and Development agency building web and mobile products - thoughtbot"
+    description="Look for a nearby developer? Hire thoughtbot, a design and development agency to provide design and development services for mobile and web applications."
+    image=""
+>
+    <Header />
+    <Container>
+        <Masthead />
+        <OurServices />
+        <Clients />
+        <ServiceHighlight />
+        <CaseStudies />
+    </Container>
+    <ReviewBanner />
+    <Container>
+        <WorkshopsAndEvents />
+        <OurCompany />
+        <Resources />
+    </Container>
+    <Incubator />
+    <LetsTalk />
+    <Footer />
+</Layout>

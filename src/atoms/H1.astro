@@ -1,0 +1,7 @@
+---
+const { center, uppercase } = Astro.props
+---
+
+<h1 class={` ${ center ? "text-center" : "" } ${ uppercase ? "uppercase" : "" } text-thoughtbot_black font-calibre font-bold text-4xl md:text-5xl`}>
+    <slot/>
+</h1>

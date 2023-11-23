@@ -1,0 +1,46 @@
+---
+// ATOMS
+import H2 from "../../atoms/H2.astro"
+import H4 from "../../atoms/H4.astro"
+
+// COMPONENTS
+import TitleDescriptionCTA from "../TitleDescriptionCTA.astro"
+---
+<section class="space-y-10 py-10 md:py-20">
+    <div class="space-y-4">
+        <H2 uppercase={ true } tracking_wide={ true }>Resources for Entrepreneurs, Designers, and Developers</H2>
+        <H4>Reap the rewards of everything we’ve learned while building successful products</H4>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-x-8 gap-y-16">
+        <TitleDescriptionCTA
+            title="Purpose-built"
+            description="Actionable advice for entrepreneurs who want to build products people love."
+            cta="Dive into our resources"
+        />
+        <TitleDescriptionCTA
+            title="Design Sprint Guide"
+            description="Our guide to conducting and facilitating Product Design Sprints."
+            cta="Start your sprint"
+        />
+        <TitleDescriptionCTA
+            title="Upcase"
+            description="Become an experienced developer and take “junior” out of your title."
+            cta="Learn from the experts"
+        />
+        <TitleDescriptionCTA
+            title="Our Playbook"
+            description="Our documented approach to making successful web and mobile products."
+            cta="Discover a better way of working"
+        />
+        <TitleDescriptionCTA
+            title="Our Blog"
+            description="The latest design, development, and product tools, techniques and more."
+            cta="Stay current on best practices"
+        />
+        <TitleDescriptionCTA
+            title="Giant Robots Smashing Into Other Giant Robots Podcast"
+            description="A podcast about the design, development, and business of great software."
+            cta="Listen and subscribe"
+        />
+    </div>
+</section>
