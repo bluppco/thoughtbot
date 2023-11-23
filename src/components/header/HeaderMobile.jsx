@@ -13,13 +13,13 @@ const HeaderMobile = () => {
                 <nav className="py-4">
                     <div className="flex justify-between items-center z-30 relative h-10">
                         <a href="/">
-                        <div className="w-48 aspect-[4/1]">
-                            <img
-                                src="/logos/logo.png"
-                                alt=""
-                                className="w-full h-full object-cover"
-                            />
-                        </div>
+                            <div class="w-14 aspect-square bg-thoughtbot_red p-2 rounded-full">
+                                <img
+                                    src="/logos/logo.svg"
+                                    alt=""
+                                    class="w-full h-full"
+                                />
+                            </div>
                         </a>
                         <div className="flex gap-4 items-center">
                             <p className="font-calibre text-thoughtbot_slate text-lg">Let's talk</p>
