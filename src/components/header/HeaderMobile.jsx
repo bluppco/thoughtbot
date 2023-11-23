@@ -22,7 +22,7 @@ const HeaderMobile = () => {
                             </div>
                         </a>
                         <div className="flex gap-4 items-center">
-                            <p className="font-calibre text-thoughtbot_slate text-lg">Let's talk</p>
+                            <p className="font-calibre text-thoughtbot_slate text-lg pt-1">Let's talk</p>
                             <div onClick={ () => updateOpen( !isOpen ) }>
                                 {
 
@@ -60,7 +60,7 @@ const HeaderMobile = () => {
                                 transition={{ duration: 0.3 }}
                                 className="grow"
                             >
-                                <div className="h-full w-full z-10 pt-10">
+                                <div className="h-full w-full z-10 mt-10">
                                     <ul className="flex flex-col gap-6 text-center">
                                         <HeaderItemJSX>Services</HeaderItemJSX>
                                         <HeaderItemJSX>Case Studies</HeaderItemJSX>
@@ -69,7 +69,6 @@ const HeaderMobile = () => {
                                     </ul>
                                 </div>
                             </motion.div>
-
                         }
                     </AnimatePresence>
                 </nav>
