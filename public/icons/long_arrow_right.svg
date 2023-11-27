@@ -1,5 +1,13 @@
-<svg viewBox="0 0 50 50" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 50 50"><path d="M1 26h43.586l-6.293 6.293 1.414 1.414L48.414 25l-8.707-8.707-1.414 1.414L44.586 24H1z" fill="#e03131" class="fill-000000"></path></svg>
+<!-- <svg viewBox="0 0 50 50" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 50 50"><path d="M1 26h43.586l-6.293 6.293 1.414 1.414L48.414 25l-8.707-8.707-1.414 1.414L44.586 24H1z" fill="#e03131" class="fill-000000"></path></svg> -->
 
-<!-- <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-  <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
-</svg> -->
+<svg
+  width="42"
+  height="11"
+  xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+        d="M41.897 5.11a.79.79 0 01-.124.945l-4.667 4.717a.792.792 0 01-.552.228.792.792 0 01-.552-.228.789.789 0 010-1.108l3.344-3.38H.778A.784.784 0 010 5.496c0-.432.35-.786.778-.786h38.568l-3.337-3.373a.789.789 0 010-1.108.769.769 0 011.097 0l4.63 4.68a.791.791 0 01.16.2z"
+        fill="#e03131"
+        fill-rule="evenodd"
+    />
+</svg>

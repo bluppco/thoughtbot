@@ -4,6 +4,9 @@ import Container from "../../layouts/Container.astro"
 
 // ATOMS
 import ArrowCTA from "../../atoms/ArrowCTA.astro"
+
+// CONSTANTS
+import { CDN_LINK, IMAGE_QUALITY, IMAGE_WIDTH } from "../../constants/cdn"
 ---
 <section class="bg-thoughtbot_lavender py-20 my-10 md:my-20">
     <Container>
@@ -24,7 +27,7 @@ import ArrowCTA from "../../atoms/ArrowCTA.astro"
                 <div class="flex gap-4 items-center">
                     <div class="w-16 aspect-square rounded-full overflow-hidden">
                         <img
-                            src="/images/ceo-edgepet.avif"
+                            src={ CDN_LINK + "ceo-edgypet.avif" + "?quality=" + IMAGE_QUALITY + "&width=" + IMAGE_WIDTH }
                             alt=""
                             class="w-full h-full"
                         />

@@ -2,6 +2,9 @@
 // ATOMS
 import H1 from "../../atoms/H1.astro"
 import Button from "../../atoms/Button.astro"
+
+// CONSTANTS
+import { CDN_LINK, IMAGE_QUALITY, IMAGE_WIDTH } from "../../constants/cdn"
 ---
 <section class="grid grid-cols-1 md:grid-cols-2 gap-4 py-10 md:py-20 mt-40">
     <div class="space-y-4 md:space-y-10 md:pr-20">
@@ -12,7 +15,7 @@ import Button from "../../atoms/Button.astro"
     <div>
         <div class="">
             <img
-                src="/images/masthead-image.avif"
+                src={ CDN_LINK + "masthead-image.avif" + "?quality=" + IMAGE_QUALITY + "&width=" + IMAGE_WIDTH }
                 alt=""
                 class="h-full w-full object-cover"
             />

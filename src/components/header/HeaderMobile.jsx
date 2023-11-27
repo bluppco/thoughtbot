@@ -11,13 +11,13 @@ const HeaderMobile = () => {
         <header className="md:hidden top-0 fixed z-30 w-full bg-white">
             <ContainerJSX>
                 <nav className="py-4">
-                    <div className="flex justify-between items-center z-30 relative h-10">
+                    <div className="flex justify-between items-center z-30 relative h-14">
                         <a href="/">
-                            <div class="w-14 aspect-square bg-thoughtbot_red p-2 rounded-full">
+                            <div class="w-56 aspect-square">
                                 <img
                                     src="/logos/logo.svg"
                                     alt=""
-                                    class="w-full h-full"
+                                    className="w-full h-full"
                                 />
                             </div>
                         </a>
@@ -60,7 +60,7 @@ const HeaderMobile = () => {
                                 transition={{ duration: 0.3 }}
                                 className="grow"
                             >
-                                <div className="h-full w-full z-10 mt-10">
+                                <div className="h-full w-full z-10">
                                     <ul className="flex flex-col gap-6 text-center">
                                         <HeaderItemJSX>Services</HeaderItemJSX>
                                         <HeaderItemJSX>Case Studies</HeaderItemJSX>
