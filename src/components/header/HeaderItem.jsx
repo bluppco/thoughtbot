@@ -1,7 +1,7 @@
 const HeaderItemJSX = ( props ) =>{
 
     return(
-        <li className="font-calibre text-sm">
+        <li className="font-calibre">
             { props.children }
         </li>
 
