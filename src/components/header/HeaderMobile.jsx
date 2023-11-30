@@ -22,7 +22,7 @@ const HeaderMobile = () => {
                             </div>
                         </a>
                         <div className="flex gap-6 items-center">
-                            <p className="font-calibre text-thoughtbot_slate text-sm">Let's Talk</p>
+                            <p className="font-calibre text-thoughtbot_slate">Let's Talk</p>
                             <div onClick={ () => updateOpen( !isOpen ) }>
                                 {
 
@@ -54,7 +54,7 @@ const HeaderMobile = () => {
                                 animate={ isOpen ? "open" : "collapsed" }
                                 exit="collapsed"
                                 variants={{
-                                    open: { opacity: 1, height: "190px" },
+                                    open: { opacity: 1, height: "200px" },
                                     collapsed: { opacity: 0, height: "0px" }
                                 }}
                                 transition={{ duration: 0.3 }}
