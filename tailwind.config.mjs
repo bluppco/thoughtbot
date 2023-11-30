@@ -17,7 +17,7 @@ export default {
 
 			fontFamily: {
 
-				"calibre": [ "Calibre Regular", "Helvetica Neue", "Helvetica", "Arial", "sans-serif" ],
+				"calibre": [ "Calibre", "Helvetica Neue", "Helvetica", "Arial", "sans-serif" ],
 				"calibre_medium": [ "Calibre Medium", "Helvetica Neue", "Helvetica", "Arial", "sans-serif" ],
 				"calibre_semibold": [ "Calibre Semibold", "Helvetica Neue", "Helvetica", "Arial", "sans-serif" ],
 				"calibre_bold": [ "Calibre Bold", "Helvetica Neue", "Helvetica", "Arial", "sans-serif" ],
