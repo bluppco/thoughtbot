@@ -13,7 +13,7 @@ const HeaderMobile = () => {
                 <nav className="py-4">
                     <div className="flex justify-between items-center z-30 relative h-14">
                         <a href="/">
-                            <div class="w-56 aspect-square">
+                            <div className="w-14 aspect-square">
                                 <img
                                     src="/logos/logo.svg"
                                     alt=""
@@ -21,15 +21,15 @@ const HeaderMobile = () => {
                                 />
                             </div>
                         </a>
-                        <div className="flex gap-4 items-center">
-                            <p className="font-calibre text-thoughtbot_slate text-lg pt-1">Let's talk</p>
+                        <div className="flex gap-6 items-center">
+                            <p className="font-calibre text-thoughtbot_slate text-sm">Let's Talk</p>
                             <div onClick={ () => updateOpen( !isOpen ) }>
                                 {
 
                                     isOpen &&
                                     <img
                                         src="/icons/close.svg"
-                                        className="w-6 aspect-square"
+                                        className="w-8 aspect-square"
                                     />
 
                                 }
@@ -38,7 +38,7 @@ const HeaderMobile = () => {
                                     !isOpen &&
                                     <img
                                         src="/icons/menu.svg"
-                                        className="w-6 aspect-square"
+                                        className="w-8 aspect-square"
                                     />
 
                                 }
@@ -54,18 +54,18 @@ const HeaderMobile = () => {
                                 animate={ isOpen ? "open" : "collapsed" }
                                 exit="collapsed"
                                 variants={{
-                                    open: { opacity: 1, height: "240px" },
+                                    open: { opacity: 1, height: "190px" },
                                     collapsed: { opacity: 0, height: "0px" }
                                 }}
                                 transition={{ duration: 0.3 }}
                                 className="grow"
                             >
-                                <div className="h-full w-full z-10">
+                                <div className="h-full w-full z-10 pt-6">
                                     <ul className="flex flex-col gap-6 text-center">
                                         <HeaderItemJSX>Services</HeaderItemJSX>
                                         <HeaderItemJSX>Case Studies</HeaderItemJSX>
                                         <HeaderItemJSX>Resources</HeaderItemJSX>
-                                        <HeaderItemJSX>Celebrating 20 Years 🎉</HeaderItemJSX>
+                                        {/*<HeaderItemJSX>Celebrating 20 Years 🎉</HeaderItemJSX>*/}
                                     </ul>
                                 </div>
                             </motion.div>
