@@ -22,7 +22,7 @@ const {
 } = Astro.props
 ---
 <div class="grid grid-cols-1 md:grid-cols-2 gap-20">
-    <div class={` ${ is_right ? "order-last" : "order-last md:order-none" } ${ height ? "h-[640px]" : "aspect-square" } w-full`}>
+    <div class={` ${ is_right ? "order-last" : "order-last md:order-none" } ${ height } w-full`}>
         <img
             src={ CDN_LINK + src + "?quality=" + IMAGE_QUALITY + "&width=" + IMAGE_WIDTH }
             alt={ alt }
