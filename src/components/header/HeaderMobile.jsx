@@ -13,23 +13,23 @@ const HeaderMobile = () => {
                 <nav className="py-4">
                     <div className="flex justify-between items-center z-30 relative h-14">
                         <a href="/">
-                            <div class="w-56 aspect-square">
+                            <div>
                                 <img
                                     src="/logos/logo.svg"
                                     alt=""
-                                    className="w-full h-full"
+                                    className="w-72 h-72"
                                 />
                             </div>
                         </a>
                         <div className="flex gap-4 items-center">
-                            <p className="font-calibre text-thoughtbot_slate text-lg pt-1">Let's talk</p>
+                            <p className="font-calibre text-thoughtbot_slate text-sm">Let's talk</p>
                             <div onClick={ () => updateOpen( !isOpen ) }>
                                 {
 
                                     isOpen &&
                                     <img
                                         src="/icons/close.svg"
-                                        className="w-6 aspect-square"
+                                        className="w-10 aspect-square"
                                     />
 
                                 }
@@ -38,7 +38,7 @@ const HeaderMobile = () => {
                                     !isOpen &&
                                     <img
                                         src="/icons/menu.svg"
-                                        className="w-6 aspect-square"
+                                        className="w-10 aspect-square"
                                     />
 
                                 }
