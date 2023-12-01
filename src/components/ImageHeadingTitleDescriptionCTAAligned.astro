@@ -6,7 +6,7 @@ import H4 from "../atoms/H4.astro"
 import Paragraph from "../atoms/Paragraph.astro"
 
 // CONSTANTS
-import { CDN_LINK, IMAGE_QUALITY, IMAGE_WIDTH } from "../constants/cdn"
+import { CDN_LINK, IMAGE_QUALITY, IMAGE_WIDTH_600 } from "../constants/cdn"
 
 const {
 
@@ -24,9 +24,9 @@ const {
 <div class="grid grid-cols-1 md:grid-cols-2 gap-20">
     <div class={` ${ is_right ? "order-last" : "order-last md:order-none" } ${ height } w-full`}>
         <img
-            src={ CDN_LINK + src + "?quality=" + IMAGE_QUALITY + "&width=" + IMAGE_WIDTH }
+            src={ CDN_LINK + src + "?quality=" + IMAGE_QUALITY + "&width=" + IMAGE_WIDTH_600 }
             alt={ alt }
-            class="h-full w-full object-cover"
+            class="h-full w-full object-contain"
         />
     </div>
     <div class="flex flex-col justify-center gap-4 md:gap-10">
