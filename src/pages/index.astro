@@ -1,4 +1,11 @@
 ---
+const runtime = Astro.locals.runtime;
+const endpoint = "https://staging.api.thoughtbot.blupp.co"
+// NETWORK CALL TO GET DATA
+const network_data = await fetch( endpoint + "/home" )
+const data_json = await network_data.json()
+const { data, case_studies, resources } = data_json.data
+
 // LAYOUTS
 import Layout from "../layouts/Layout.astro"
 import Container from "../layouts/Container.astro"
@@ -38,7 +45,7 @@ import "../styles/custom.css"
     <Container>
         <WorkshopsAndEvents />
         <OurCompany />
-        <Resources />
+        <Resources data={ resources }/>
     </Container>
     <Incubator />
     <LetsTalk />
