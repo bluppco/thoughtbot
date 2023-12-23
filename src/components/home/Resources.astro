@@ -5,12 +5,13 @@ import H4 from "../../atoms/H4.astro"
 
 // COMPONENTS
 import TitleDescriptionCTA from "../TitleDescriptionCTA.astro"
-const { data } = Astro.props
+
+const { data, home } = Astro.props
 ---
 <section class="space-y-10 py-10 md:py-20">
     <div class="space-y-4">
-        <H2 uppercase={ true } tracking_wide={ true }>Resources for Entrepreneurs, Designers, and Developers</H2>
-        <H4>Reap the rewards of everything we’ve learned while building successful products</H4>
+        <H2 uppercase={ true } tracking_wide={ true }>{ home.title }</H2>
+        <H4>{ home.sub_title }</H4>
     </div>
     <div class="grid grid-cols-1 md:grid-cols-3 gap-x-8 gap-y-16">
         {
