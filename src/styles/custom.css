@@ -16,3 +16,19 @@
     font-weight: 600;
     font-style: normal;
 }
+
+.markdown h3 {
+
+    @apply text-thoughtbot_gray font-calibre text-lg leading-tight uppercase tracking-widest pb-4 !important;
+
+}
+.markdown ul {
+
+    @apply list-disc pl-4 md:pl-0 !important;
+
+}
+.markdown li {
+
+    @apply list-disc md:text-lg text-thoughtbot_slate marker:text-thoughtbot_zinc !important;
+
+}

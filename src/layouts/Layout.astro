@@ -8,6 +8,12 @@ const {
 } = Astro.props
 
 import { WEBSITE } from "../constants/website"
+
+// CUSTOM STYLES
+import "../styles/custom.css"
+
+// IMPORITNG CONSTANTS
+import { CDN_LINK } from "../constants/cdn"
 ---
 
 <!DOCTYPE html>
@@ -22,14 +28,14 @@ import { WEBSITE } from "../constants/website"
         <meta property="og:url" content={ WEBSITE } />
         <meta property="og:title" content={ title } />
         <meta property="og:description" content={ description } />
-        <meta property="og:image" content={ image } />
+        <meta property="og:image" content={ CDN_LINK + image } />
         <meta property="twitter:card" content="summary_large_image" />
         <meta property="twitter:url" content={ WEBSITE } />
         <meta property="twitter:title" content={ title } />
         <meta property="twitter:description" content={ description } />
-        <meta property="twitter:image" content={ image } />
-        <meta property="twitter:image" content={ image } />
-        <link rel="icon" type="image/x-icon" href="/favicon.svg">
+        <meta property="twitter:image" content={ CDN_LINK + image } />
+        <meta property="twitter:image" content={ CDN_LINK + image } />
+        <link rel="icon" type="image/x-icon" href="/thoughtbot-favicon.svg">
     </head>
     <body class="">
         <slot />
