@@ -1,4 +1,53 @@
 ---
+const runtime = Astro.locals.runtime;
+const endpoint = "https://staging.api.thoughtbot.blupp.co"
+
+// NETWORK CALL TO GET DATA
+const network_data = await fetch( endpoint + "/home" )
+const data_json = await network_data.json()
+const { home, case_studies, resources, meta_tags } = data_json.data
+
+// HOME PROPS
+let masthead = null
+let our_services = null
+let clients = null
+let service_highlight = null
+let case_study = null
+let review_banner = null
+let workshops_and_events = null
+let our_company = null
+let resource = null
+let incubator = null
+let lets_talk = null
+
+home.map( ( data ) => {
+
+	if( data.slug === "masthead" )
+        masthead = data
+    else if( data.slug === "our-services" )
+        our_services = data
+	else if ( data.slug === "clients" )
+        clients = data
+    else if ( data.slug === "service-highlight" )
+        service_highlight = data
+    else if ( data.slug === "case-studies" )
+        case_study = data
+    else if ( data.slug === "review-banner" )
+        review_banner = data
+    else if ( data.slug === "workshops-and-events" )
+        workshops_and_events = data
+    else if ( data.slug === "our-company" )
+        our_company = data
+    else if ( data.slug === "resources" )
+        resource = data
+    else if ( data.slug === "incubator" )
+        incubator = data
+    else if ( data.slug === "lets-talk" )
+        lets_talk = data
+
+})
+
+
 // LAYOUTS
 import Layout from "../layouts/Layout.astro"
 import Container from "../layouts/Container.astro"
@@ -19,25 +68,25 @@ import LetsTalk from "../components/home/LetsTalk.astro"
 import Footer from "../components/footer/Footer.astro"
 ---
 <Layout
-    title="Design and Development agency building web and mobile products - thoughtbot"
-    description="Look for a nearby developer? Hire thoughtbot, a design and development agency to provide design and development services for mobile and web applications."
-    image=""
+    title={ meta_tags.title }
+    description={ meta_tags.description }
+    image={ meta_tags.cover }
 >
     <Header />
     <Container>
-        <Masthead />
-        <OurServices />
-        <Clients />
-        <ServiceHighlight />
-        <CaseStudies />
+        <Masthead data={ masthead } />
+        <OurServices data={ our_services } />
+        <Clients data={ clients } />
+        <ServiceHighlight data={ service_highlight } />
+        <CaseStudies data={ case_studies } home={ case_study } />
     </Container>
-    <ReviewBanner />
+    <ReviewBanner data={ review_banner } />
     <Container>
-        <WorkshopsAndEvents />
-        <OurCompany />
-        <Resources />
+        <WorkshopsAndEvents data={ workshops_and_events } />
+        <OurCompany data={ our_company } />
+        <Resources data={ resources } home={ resource } />
     </Container>
-    <Incubator />
-    <LetsTalk />
+    <Incubator data={ incubator } />
+    <LetsTalk data={ lets_talk } />
     <Footer />
 </Layout>

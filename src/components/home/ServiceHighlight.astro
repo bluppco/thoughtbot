@@ -1,14 +1,16 @@
 ---
 // COMPONENTS
 import ImageHeadingTitleDescriptionCTAAligned from "../ImageHeadingTitleDescriptionCTAAligned.astro"
+
+const { data } = Astro.props
 ---
 <section class="py-10 md:py-20">
     <ImageHeadingTitleDescriptionCTAAligned
-        src="/images/service-highlight.avif"
+        src={ data.cover }
         alt=""
-        heading="Service Highlight"
-        title="Navigate, pivot and grow with confidence"
-        description="The best decisions are made through quality research and strategic insights. If you have an opportunity you are looking to take advantage of, a problem you are trying to solve or a desire to more successfully embrace big ideas, we can help you uncover the right path forward."
-        cta="Learn how to embrace innovation & stay competitive"
+        heading={ data.title }
+        title={ data.sub_title }
+        description={ data.description }
+        cta={ data.button_title }
     />
 </section>

@@ -1,7 +1,9 @@
 ---
 // ATOMS
-import Paragraph from "../atoms/Paragraph.astro"
 import ArrowCTA from "../atoms/ArrowCTA.astro"
+
+// CONSTANTS
+import { CDN_LINK, IMAGE_QUALITY, IMAGE_WIDTH_600 } from "../constants/cdn"
 
 const {
 
@@ -14,18 +16,18 @@ const {
 } = Astro.props
 ---
 <div class="space-y-4 rounded overflow-hidden">
-    <div class="overflow-hidden">
+    <div class="overflow-hidden w-full aspect-[3/2] bg-zinc-200">
         <img
-            src={ src }
+            src={ CDN_LINK + src + "?quality=" + IMAGE_QUALITY + "&width=" + IMAGE_WIDTH_600 }
             alt={ alt }
             class="w-full h-full object-cover"
         />
     </div>
-    <div class="space-y-8">
+    <div class="space-y-4 md:space-y-8">
         <div>
-            <span class="text-thoughtbot_slate font-medium text-lg font-calibre">{ title }</span>
+            <span class="text-thoughtbot_slate text-xl font-calibre font-medium">{ title }</span>
             <span> — </span>
-            <span class="text-thoughtbot_slate text-lg font-calibre">{ description }</span>
+            <span class="text-thoughtbot_slate text-xl font-calibre">{ description }</span>
         </div>
         <ArrowCTA>{ cta }</ArrowCTA>
     </div>

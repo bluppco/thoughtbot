@@ -1,0 +1,34 @@
+@font-face {
+    font-family: 'Calibre';
+    src: url('/fonts/CalibreWeb-Medium.woff2') format('woff2');
+    font-weight: 500;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Calibre';
+    src: url('/fonts/CalibreWeb-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Calibre';
+    src: url('/fonts/CalibreWeb-Semibold.woff2') format('woff2');
+    font-weight: 600;
+    font-style: normal;
+}
+
+.markdown h3 {
+
+    @apply text-thoughtbot_gray font-calibre text-lg leading-tight uppercase tracking-widest pb-4 !important;
+
+}
+.markdown ul {
+
+    @apply list-disc pl-4 md:pl-0 !important;
+
+}
+.markdown li {
+
+    @apply list-disc md:text-lg text-thoughtbot_slate marker:text-thoughtbot_zinc !important;
+
+}

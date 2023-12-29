@@ -4,6 +4,38 @@ export default {
 	theme: {
 		extend: {
 
+			letterSpacing: {
+
+				tightest: '-.075em',
+				tighter: '-.05em',
+				t: '-.04em',
+				tight: '-.025em',
+				normal: '0',
+				wide: '.025em',
+				wider: '.05em',
+				widest: '.1em'
+
+			  },
+
+			screens: {
+
+				'sm': '640px',
+				'md': '768px',
+				'lg': '1024px',
+				'xl': '1280px',
+				'mac': '1440px',
+				'2xl': '1536px'
+
+			},
+
+			fontFamily: {
+
+				"calibre": [ "Calibre", "Helvetica Neue", "Helvetica", "Arial", "sans-serif" ],
+				"calibre_medium": [ "Calibre Medium", "Helvetica Neue", "Helvetica", "Arial", "sans-serif" ],
+				"calibre_semibold": [ "Calibre Semibold", "Helvetica Neue", "Helvetica", "Arial", "sans-serif" ],
+				"calibre_bold": [ "Calibre Bold", "Helvetica Neue", "Helvetica", "Arial", "sans-serif" ],
+			},
+
 			colors: {
 
 				"thoughtbot_light_red": "#e03131",

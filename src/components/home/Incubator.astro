@@ -4,16 +4,19 @@ import Container from "../../layouts/Container.astro"
 
 // COMPONENTS
 import ImageHeadingTitleDescriptionCTAAligned from "../ImageHeadingTitleDescriptionCTAAligned.astro"
+
+const { data } = Astro.props
 ---
 <section class="bg-thoughtbot_lavender py-20 md:py-28">
     <Container>
         <ImageHeadingTitleDescriptionCTAAligned
-            src="/images/incubator.avif"
+            src={ data.cover }
             alt=""
-            heading="New"
-            title="thoughtbot Incubator"
-            description="If you are a founding team with a business idea that involves a web or mobile app, we encourage you to apply for our 8-week program. We’ll help you get the proof points you need in order to move forward with confidence. Visit the Incubator page to subscribe to updates and see when the next session opens for applications."
-            cta="Learn more"
+            heading={ data.title }
+            title={ data.sub_title }
+            description={ data.description }
+            cta={ data.button_title }
+            height="aspect-[3/2]"
         />
     </Container>
 </section>

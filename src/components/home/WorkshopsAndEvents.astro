@@ -1,15 +1,18 @@
 ---
 // COMPONENTS
 import ImageHeadingTitleDescriptionCTAAligned from "../ImageHeadingTitleDescriptionCTAAligned.astro"
+
+const { data } = Astro.props
 ---
 <section class="py-10 md:py-20">
     <ImageHeadingTitleDescriptionCTAAligned
-        src="/images/online-workshop.avif"
-        alt=""
-        heading="Online Workshops and Events"
-        title="Watch online workshops that unstick your product strategy, level-up your team, and uncover next steps"
-        description="Join the thoughtbot team and our special guests as we tackle today’s biggest product challenges. During our workshops, we cover the latest from the latest on how COVID-19 is impacting our product, design and development process to thoughtbot's tried and true process."
-        cta="Check out our events"
+        src={ data.cover }
+        alt={ data.title }
+        heading={ data.title }
+        title={ data.sub_title }
+        description={ data.description }
+        cta={ data.button_title }
         is_right={ true }
+        height="h-[330px] md:h-[640px]"
     />
 </section>

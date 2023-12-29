@@ -5,38 +5,29 @@ import H4 from "../../atoms/H4.astro"
 
 // COMPONENTS
 import ImageTitleDescriptionCTA from "../ImageTitleDescriptionCTA.astro"
+
+const { data, home } = Astro.props
 ---
 <section class="space-y-4">
-    <H2 uppercase={ true } tracking_wide={ true }>Startups, scale-ups, and beyond</H2>
-    <H4>Positive outcomes for hundreds of web and mobile projects like yours</H4>
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-20">
-        <ImageTitleDescriptionCTA
-            src="/images/hbr.avif"
-            alt=""
-            title="HBR"
-            description="Future-proofing Harvard Business Review to inspire the next generation of global business leaders."
-            cta="Read the case study"
-        />
-        <ImageTitleDescriptionCTA
-            src="/images/digital-ocean.avif"
-            alt=""
-            title="Digital Ocean"
-            description="Remedy CMS blockers for faster site publishing and iterations."
-            cta="Read the case study"
-        />
-        <ImageTitleDescriptionCTA
-            src="/images/mbta.avif"
-            alt=""
-            title="MBTA"
-            description="Conduct research to uncover a technology intiative to improve communication and workflows."
-            cta="Read the case study"
-        />
-        <ImageTitleDescriptionCTA
-            src="/images/joydrive.avif"
-            alt=""
-            title="Joydrive"
-            description="Validate business model and ship MVP in 6 weeks."
-            cta="Read the case study"
-        />
+    <H2 uppercase={ true } tracking_wide={ true }>{ home.title }</H2>
+    <H4>{ home.sub_title }</H4>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-20 pt-4">
+        {
+
+            data.map( ( item ) => {
+
+                return(
+                    <ImageTitleDescriptionCTA
+                        src={ item.cover }
+                        alt={ item.title }
+                        title={ item.title }
+                        description={ item.description }
+                        cta={ item.button_title }
+                    />
+                )
+
+            })
+
+        }
     </div>
 </section>

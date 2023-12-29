@@ -1,14 +1,16 @@
 ---
 // COMPONENTS
 import ImageHeadingTitleDescriptionCTAAligned from "../ImageHeadingTitleDescriptionCTAAligned.astro"
+
+const { data } = Astro.props
 ---
 <section class="py-10 md:py-20">
     <ImageHeadingTitleDescriptionCTAAligned
-        src="/images/purpose-driven-team.avif"
+        src={ data.cover }
         alt=""
-        heading="Our company"
-        title="Purpose-driven teams"
-        description="Our team is driven by our purpose and values; we continually improve our process, do our best work in strong partnerships with you, and transparently share how we work. We now have teammates located throughout the Americas, Europe, West Asia, and Africa enabling us to take on client projects around the world."
-        cta="Learn more about our company"
+        heading={ data.title }
+        title={ data.sub_title }
+        description={ data.description }
+        cta={ data.button_title }
     />
 </section>
