@@ -1,7 +1,7 @@
 # Thought Bot
 
 ### Headings
-- One : HeadingOne - 24px/
+- One : HeadingOne - text-thoughtbot_black, font-calibre, text-48px, md:text-60px, font-semibold tracking-tight
 
 
 ## Currently missing

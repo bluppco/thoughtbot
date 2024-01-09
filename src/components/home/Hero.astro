@@ -1,7 +1,8 @@
 ---
 // ATOMS
 import HeadingOne from "../../atoms/heading/One.astro"
-import Button from "../../atoms/Button.astro"
+import LargeButton from "../../atoms/Button/LargeButton.astro"
+import Paragraph from "../../atoms/Paragraph.astro"
 
 // CONSTANTS
 import { CDN_LINK, IMAGE_QUALITY, IMAGE_WIDTH_600 } from "../../constants/cdn"
@@ -9,7 +10,7 @@ import { CDN_LINK, IMAGE_QUALITY, IMAGE_WIDTH_600 } from "../../constants/cdn"
 const { data } = Astro.props
 ---
 <section class="grid grid-cols-1 md:grid-cols-2 gap-20 md:gap-4 py-10 md:py-20 mt-12 md:mt-32">
-    <div class="space-y-4 md:space-y-10 md:pr-20">
+    <div class="space-y-4 md:space-y-10">
         {
 
             false &&
@@ -38,11 +39,11 @@ const { data } = Astro.props
             />
 
         }
-        <div class="mt-20">
+        <div class="md:pr-40">
             <HeadingOne>{ data.title }</HeadingOne>
         </div>
-        <p class="font-calibre text-thoughtbot_slate leading-relaxed md:leading-[1.4] text-lg md:text-[22px]">{ data.description }</p>
-        <Button large={ true }>{ data.button_title }</Button>
+        <Paragraph>{ data.description }</Paragraph>
+        <LargeButton>{ data.button_title }</LargeButton>
     </div>
     <div>
         <div class="w-full aspect-[3/2]">

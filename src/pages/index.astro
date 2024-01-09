@@ -63,7 +63,7 @@ import Container from "../layouts/Container.astro"
 
 // COMPONENTS
 import Header from "../components/header/Header.astro"
-import Masthead from "../components/home/Masthead.astro"
+import Hero from "../components/home/Hero.astro"
 import OurServices from "../components/home/our-services/OurServices.astro"
 import Clients from "../components/home/Clients.astro"
 import ServiceHighlight from "../components/home/ServiceHighlight.astro"
@@ -83,7 +83,7 @@ import Footer from "../components/footer/Footer.astro"
 >
     <Header />
     <Container>
-        <Masthead data={ masthead } />
+        <Hero data={ masthead } />
         <OurServices data={ our_services } />
         <Clients data={ clients } />
         <ServiceHighlight data={ service_highlight } />
