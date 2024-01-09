@@ -7,7 +7,7 @@ const { data } = Astro.props
 <section class="py-10 md:py-20">
     <ImageHeadingTitleDescriptionCTAAligned
         src={ data.cover }
-        alt=""
+        alt={ data.title }
         heading={ data.title }
         title={ data.sub_title }
         description={ data.description }
