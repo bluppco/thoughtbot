@@ -5,7 +5,8 @@ import { marked } from "marked"
 // ATOMS
 import ArrowCTA from "../../../atoms/ArrowCTA.astro"
 import H2 from "../../../atoms/H2.astro"
-import H3 from "../../../atoms/H3.astro"
+import HeadingTwoUppercase from "../../../atoms/heading/TwoUppercase.astro"
+import HeadingTwo from "../../../atoms/heading/Two.astro"
 import H4 from "../../../atoms/H4.astro"
 import Paragraph from "../../../atoms/Paragraph.astro"
 
@@ -14,9 +15,9 @@ const { data } = Astro.props
 const html = marked.parse( data.md )
 ---
 <section class="py-10 md:py-20 space-y-4 md:space-y-10">
-    <div class="space-y-4">
-        <H2 uppercase={ true }>{ data.title }</H2>
-        <H4>{ data.sub_title }</H4>
+    <div class="space-y-4 md:pr-80">
+        <HeadingTwoUppercase>{ data.title }</HeadingTwoUppercase>
+        <HeadingTwo>{ data.sub_title }</HeadingTwo>
     </div>
     <div class="grid grid-cols-1 md:grid-cols-5 gap-10">
         <div class="md:col-span-3 space-y-4 md:space-y-10">
