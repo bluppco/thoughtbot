@@ -74,12 +74,14 @@ import Resources from "../components/home/Resources.astro"
 import Incubator from "../components/home/Incubator.astro"
 import LetsTalk from "../components/home/LetsTalk.astro"
 import Footer from "../components/footer/Footer.astro"
+import HeaderBanner from "../components/HeaderBanner.astro"
 ---
 <Layout
     title={ meta_tags.title }
     description={ meta_tags.description }
     image={ meta_tags.cover }
 >
+    <HeaderBanner />
     <Header />
     <Hero data={ masthead } />
     <OurServices data={ our_services } />
