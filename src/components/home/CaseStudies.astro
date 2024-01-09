@@ -1,33 +1,40 @@
 ---
 // ATOMS
-import H2 from "../../atoms/H2.astro"
-import H4 from "../../atoms/H4.astro"
+import HeadingTwoUppercase from "../../atoms/heading/TwoUppercase.astro"
+import HeadingTwo from "../../atoms/heading/Two.astro"
 
 // COMPONENTS
 import ImageTitleDescriptionCTA from "../ImageTitleDescriptionCTA.astro"
 
+// LAYOUTS
+import Container from "../../layouts/Container.astro"
+
 const { data, home } = Astro.props
 ---
-<section class="space-y-4">
-    <H2 uppercase={ true } tracking_wide={ true }>{ home.title }</H2>
-    <H4>{ home.sub_title }</H4>
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-20 pt-4">
-        {
+<Container>
+    <section class="space-y-4">
+        <div class="space-y-4 md:pr-60">
+            <HeadingTwoUppercase>{ home.title }</HeadingTwoUppercase>
+            <HeadingTwo>{ home.sub_title }</HeadingTwo>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-20 pt-4">
+            {
 
-            data.map( ( item ) => {
+                data.map( ( item ) => {
 
-                return(
-                    <ImageTitleDescriptionCTA
-                        src={ item.cover }
-                        alt={ item.title }
-                        title={ item.title }
-                        description={ item.description }
-                        cta={ item.button_title }
-                    />
-                )
+                    return(
+                        <ImageTitleDescriptionCTA
+                            src={ item.cover }
+                            alt={ item.title }
+                            title={ item.title }
+                            description={ item.description }
+                            cta={ item.button_title }
+                        />
+                    )
 
-            })
+                })
 
-        }
-    </div>
-</section>
+            }
+        </div>
+    </section>
+</Container>

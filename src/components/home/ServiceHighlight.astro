@@ -1,16 +1,21 @@
 ---
+// LAYOUTS
+import Container from "../../layouts/Container.astro"
+
 // COMPONENTS
 import ImageHeadingTitleDescriptionCTAAligned from "../ImageHeadingTitleDescriptionCTAAligned.astro"
 
 const { data } = Astro.props
 ---
-<section class="py-10 md:py-20">
-    <ImageHeadingTitleDescriptionCTAAligned
-        src={ data.cover }
-        alt=""
-        heading={ data.title }
-        title={ data.sub_title }
-        description={ data.description }
-        cta={ data.button_title }
-    />
-</section>
+<Container>
+    <section class="py-10 md:py-20">
+        <ImageHeadingTitleDescriptionCTAAligned
+            src={ data.cover }
+            alt={ data.title }
+            heading={ data.title }
+            title={ data.sub_title }
+            description={ data.description }
+            cta={ data.button_title }
+        />
+    </section>
+</Container>

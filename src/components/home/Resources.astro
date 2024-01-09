@@ -1,33 +1,38 @@
 ---
 // ATOMS
-import H2 from "../../atoms/H2.astro"
-import H4 from "../../atoms/H4.astro"
+import HeadingTwo from "../../atoms/heading/Two.astro"
+import HeadingTwoUppercase from "../../atoms/heading/TwoUppercase.astro"
+
+// LAYOUTS
+import Container from "../../layouts/Container.astro"
 
 // COMPONENTS
 import TitleDescriptionCTA from "../TitleDescriptionCTA.astro"
 
 const { data, home } = Astro.props
 ---
-<section class="space-y-10 py-10 md:py-20">
-    <div class="space-y-4">
-        <H2 uppercase={ true } tracking_wide={ true }>{ home.title }</H2>
-        <H4>{ home.sub_title }</H4>
-    </div>
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-x-8 gap-y-16">
-        {
+<Container>
+    <section class="space-y-10 py-10 md:py-20">
+        <div class="space-y-4">
+            <HeadingTwoUppercase>{ home.title }</HeadingTwoUppercase>
+            <HeadingTwo>{ home.sub_title }</HeadingTwo>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-x-8 gap-y-16">
+            {
 
-            data.map( ( value ) => {
+                data.map( ( value ) => {
 
-                return (
-                    <TitleDescriptionCTA
-                        title={ value.title }
-                        description={ value.description }
-                        cta={ value.button_title }
-                    />
-                )
+                    return (
+                        <TitleDescriptionCTA
+                            title={ value.title }
+                            description={ value.description }
+                            cta={ value.button_title }
+                        />
+                    )
 
-            })
+                })
 
-        }
-    </div>
-</section>
+            }
+        </div>
+    </section>
+</Container>

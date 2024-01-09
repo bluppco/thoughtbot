@@ -59,11 +59,10 @@ home.map( ( data ) => {
 
 // LAYOUTS
 import Layout from "../layouts/Layout.astro"
-import Container from "../layouts/Container.astro"
 
 // COMPONENTS
 import Header from "../components/header/Header.astro"
-import Masthead from "../components/home/Masthead.astro"
+import Hero from "../components/home/Hero.astro"
 import OurServices from "../components/home/our-services/OurServices.astro"
 import Clients from "../components/home/Clients.astro"
 import ServiceHighlight from "../components/home/ServiceHighlight.astro"
@@ -75,26 +74,24 @@ import Resources from "../components/home/Resources.astro"
 import Incubator from "../components/home/Incubator.astro"
 import LetsTalk from "../components/home/LetsTalk.astro"
 import Footer from "../components/footer/Footer.astro"
+import HeaderBanner from "../components/HeaderBanner.astro"
 ---
 <Layout
     title={ meta_tags.title }
     description={ meta_tags.description }
     image={ meta_tags.cover }
 >
+    <HeaderBanner />
     <Header />
-    <Container>
-        <Masthead data={ masthead } />
-        <OurServices data={ our_services } />
-        <Clients data={ clients } />
-        <ServiceHighlight data={ service_highlight } />
-        <CaseStudies data={ case_studies } home={ case_study } />
-    </Container>
+    <Hero data={ masthead } />
+    <OurServices data={ our_services } />
+    <Clients data={ clients } />
+    <ServiceHighlight data={ service_highlight } />
+    <CaseStudies data={ case_studies } home={ case_study } />
     <ReviewBanner data={ review_banner } />
-    <Container>
-        <WorkshopsAndEvents data={ workshops_and_events } />
-        <OurCompany data={ our_company } />
-        <Resources data={ resources } home={ resource } />
-    </Container>
+    <WorkshopsAndEvents data={ workshops_and_events } />
+    <OurCompany data={ our_company } />
+    <Resources data={ resources } home={ resource } />
     <Incubator data={ incubator } />
     <LetsTalk data={ lets_talk } />
     <Footer />
