@@ -37,3 +37,8 @@
     @apply underline !important;
 
 }
+.markdown p {
+
+    @apply font-calibre text-thoughtbot_slate text-lg md:text-2xl !important;
+
+}

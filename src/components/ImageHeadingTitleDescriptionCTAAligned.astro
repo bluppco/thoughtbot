@@ -1,7 +1,9 @@
 ---
+// IMPORTING MARKED
+import { marked } from "marked"
+
 // ATOMS
 import ArrowCTA from "../atoms/ArrowCTA.astro"
-import Paragraph from "../atoms/Paragraph.astro"
 import HeadingTwo from "../atoms/heading/Two.astro"
 import HeadingTwoUppercase from "../atoms/heading/TwoUppercase.astro"
 
@@ -20,6 +22,8 @@ const {
     height
 
 } = Astro.props
+
+const html = marked.parse( description )
 ---
 <div class="grid grid-cols-1 md:grid-cols-2 gap-20">
     <div class={` ${ is_right ? "order-last" : "order-last md:order-none" } ${ height } w-full`}>
@@ -34,7 +38,7 @@ const {
             <HeadingTwoUppercase>{ heading }</HeadingTwoUppercase>
             <HeadingTwo>{ title }</HeadingTwo>
         </div>
-        <Paragraph>{ description }</Paragraph>
+        <section set:html={ html } class="markdown" />
         <ArrowCTA>{ cta }</ArrowCTA>
     </div>
 </div>
