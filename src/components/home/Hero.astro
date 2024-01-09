@@ -7,51 +7,56 @@ import Paragraph from "../../atoms/Paragraph.astro"
 // CONSTANTS
 import { CDN_LINK, IMAGE_QUALITY, IMAGE_WIDTH_600 } from "../../constants/cdn"
 
+// LAYOUTS
+import Container from "../../layouts/Container.astro"
+
 const { data } = Astro.props
 ---
-<section class="grid grid-cols-1 md:grid-cols-2 gap-20 md:gap-4 py-10 md:py-20 mt-12 md:mt-32">
-    <div class="space-y-4 md:space-y-10">
-        {
+<Container>
+    <section class="grid grid-cols-1 md:grid-cols-2 gap-20 md:gap-4 py-10 md:py-20 mt-12 md:mt-32">
+        <div class="space-y-4 md:space-y-10">
+            {
 
-            false &&
-            <svg
-                class="rough-annotation"
-                style="position: absolute; top: 0px; left: 0px; overflow: visible; pointer-events: none; width: 100px; height: 100px;">
-                    <path
-                        d="M271.4869088176638 347.92554355226457 C313.5432943558072 348.30871998621245, 349.7922095722953 355.56328409267684, 461.9393124226481 350.364834016189"
-                        fill="none"
-                        stroke="#ce2d2d"
-                        stroke-width="61.275"
-                        style="stroke-dashoffset: 190.582px; stroke-dasharray: 190.582px; animation: 406.774ms ease-out 0ms 1 normal forwards running rough-notation-dash;">
-                    </path>
-                    <path
-                        d="M460.829984491691 345.99627878703177 C405.2916271980529 357.2538919204446, 339.4149577553669 355.80957618891915, 277.357770210132 348.27581938542426"
-                        fill="none"
-                        stroke="#ce2d2d"
-                        stroke-width="61.275"
-                        style="stroke-dashoffset: 184.234px; stroke-dasharray: 184.234px; animation: 393.226ms ease-out 406.774ms 1 normal forwards running rough-notation-dash;">
-                    </path>
-            </svg>
-            <img
-                src="/icons/yellow_animation.svg"
-                alt=""
-                class="w-full h-full"
-            />
+                false &&
+                <svg
+                    class="rough-annotation"
+                    style="position: absolute; top: 0px; left: 0px; overflow: visible; pointer-events: none; width: 100px; height: 100px;">
+                        <path
+                            d="M271.4869088176638 347.92554355226457 C313.5432943558072 348.30871998621245, 349.7922095722953 355.56328409267684, 461.9393124226481 350.364834016189"
+                            fill="none"
+                            stroke="#ce2d2d"
+                            stroke-width="61.275"
+                            style="stroke-dashoffset: 190.582px; stroke-dasharray: 190.582px; animation: 406.774ms ease-out 0ms 1 normal forwards running rough-notation-dash;">
+                        </path>
+                        <path
+                            d="M460.829984491691 345.99627878703177 C405.2916271980529 357.2538919204446, 339.4149577553669 355.80957618891915, 277.357770210132 348.27581938542426"
+                            fill="none"
+                            stroke="#ce2d2d"
+                            stroke-width="61.275"
+                            style="stroke-dashoffset: 184.234px; stroke-dasharray: 184.234px; animation: 393.226ms ease-out 406.774ms 1 normal forwards running rough-notation-dash;">
+                        </path>
+                </svg>
+                <img
+                    src="/icons/yellow_animation.svg"
+                    alt=""
+                    class="w-full h-full"
+                />
 
-        }
-        <div class="md:pr-40">
-            <HeadingOne>{ data.title }</HeadingOne>
+            }
+            <div class="md:pr-40">
+                <HeadingOne>{ data.title }</HeadingOne>
+            </div>
+            <Paragraph>{ data.description }</Paragraph>
+            <LargeButton>{ data.button_title }</LargeButton>
         </div>
-        <Paragraph>{ data.description }</Paragraph>
-        <LargeButton>{ data.button_title }</LargeButton>
-    </div>
-    <div>
-        <div class="w-full aspect-[3/2]">
-            <img
-                src={ CDN_LINK + data.cover + "?quality=" + IMAGE_QUALITY + "&width=" + IMAGE_WIDTH_600 }
-                alt=""
-                class="h-full w-full object-cover"
-            />
+        <div>
+            <div class="w-full aspect-[3/2]">
+                <img
+                    src={ CDN_LINK + data.cover + "?quality=" + IMAGE_QUALITY + "&width=" + IMAGE_WIDTH_600 }
+                    alt=""
+                    class="h-full w-full object-cover"
+                />
+            </div>
         </div>
-    </div>
-</section>
+    </section>
+</Container>

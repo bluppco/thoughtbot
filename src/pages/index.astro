@@ -59,7 +59,6 @@ home.map( ( data ) => {
 
 // LAYOUTS
 import Layout from "../layouts/Layout.astro"
-import Container from "../layouts/Container.astro"
 
 // COMPONENTS
 import Header from "../components/header/Header.astro"
@@ -82,19 +81,15 @@ import Footer from "../components/footer/Footer.astro"
     image={ meta_tags.cover }
 >
     <Header />
-    <Container>
-        <Hero data={ masthead } />
-        <OurServices data={ our_services } />
-        <Clients data={ clients } />
-        <ServiceHighlight data={ service_highlight } />
-        <CaseStudies data={ case_studies } home={ case_study } />
-    </Container>
+    <Hero data={ masthead } />
+    <OurServices data={ our_services } />
+    <Clients data={ clients } />
+    <ServiceHighlight data={ service_highlight } />
+    <CaseStudies data={ case_studies } home={ case_study } />
     <ReviewBanner data={ review_banner } />
-    <Container>
-        <WorkshopsAndEvents data={ workshops_and_events } />
-        <OurCompany data={ our_company } />
-        <Resources data={ resources } home={ resource } />
-    </Container>
+    <WorkshopsAndEvents data={ workshops_and_events } />
+    <OurCompany data={ our_company } />
+    <Resources data={ resources } home={ resource } />
     <Incubator data={ incubator } />
     <LetsTalk data={ lets_talk } />
     <Footer />
