@@ -4,6 +4,8 @@ import ArrowCTA from "../atoms/ArrowCTA.astro"
 import H2 from "../atoms/H2.astro"
 import H4 from "../atoms/H4.astro"
 import Paragraph from "../atoms/Paragraph.astro"
+import HeadingTwo from "../atoms/heading/Two.astro"
+import HeadingTwoUppercase from "../atoms/heading/TwoUppercase.astro"
 
 // CONSTANTS
 import { CDN_LINK, IMAGE_QUALITY, IMAGE_WIDTH_600 } from "../constants/cdn"
@@ -31,8 +33,8 @@ const {
     </div>
     <div class="flex flex-col justify-center gap-4 md:gap-10">
         <div class="space-y-4">
-            <H2 uppercase={ true } tracking_wide={ true }>{ heading }</H2>
-            <H4>{ title }</H4>
+            <HeadingTwoUppercase>{ heading }</HeadingTwoUppercase>
+            <HeadingTwo>{ title }</HeadingTwo>
         </div>
         <Paragraph>{ description }</Paragraph>
         <ArrowCTA>{ cta }</ArrowCTA>
