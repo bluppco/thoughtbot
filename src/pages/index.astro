@@ -1,9 +1,18 @@
 ---
-const runtime = Astro.locals.runtime;
+const runtime = Astro.locals.runtime
 const endpoint = "https://staging.api.thoughtbot.blupp.co"
 
 // NETWORK CALL TO GET DATA
-const network_data = await fetch( endpoint + "/home" )
+const options = {
+
+    headers: {
+
+        "Authorization": "Bearer " + runtime.env.WEB_KEY_STAGING
+
+    }
+
+}
+const network_data = await fetch( endpoint + "/home", options )
 const data_json = await network_data.json()
 const { home, case_studies, resources, meta_tags } = data_json.data
 
