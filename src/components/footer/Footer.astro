@@ -20,22 +20,26 @@ import FooterItem from './FooterItem.astro'
                     <FooterItem>Resources</FooterItem>
                     <li class="text-lg underline hover:no-underline text-thoughtbot_light_orange hover:text-thoughtbot_light_red font-calibre transition-all duration-200 cursor-pointer">Let's Talk</li>
                 </ul>
-                <ul class="space-y-2">
-                    <FooterItem>Our Company</FooterItem>
-                    <FooterItem>Careers</FooterItem>
-                    <FooterItem>Purpose</FooterItem>
-                    <FooterItem>Blog</FooterItem>
-                    <FooterItem>Sponsor</FooterItem>
-                </ul>
-                <ul class="space-y-2">
-                    <FooterItem>Mastodon</FooterItem>
-                    <FooterItem>GitHub</FooterItem>
-                    <FooterItem>Instagram</FooterItem>
-                    <FooterItem>YouTube</FooterItem>
-                    <FooterItem>twitch</FooterItem>
-                </ul>
+                <div class="flex md:justify-end">
+                    <ul class="space-y-2">
+                        <FooterItem>Our Company</FooterItem>
+                        <FooterItem>Careers</FooterItem>
+                        <FooterItem>Purpose</FooterItem>
+                        <FooterItem>Blog</FooterItem>
+                        <FooterItem>Sponsor</FooterItem>
+                    </ul>
+                </div>
+                <div class="flex md:justify-end">
+                    <ul class="space-y-2">
+                        <FooterItem>Mastodon</FooterItem>
+                        <FooterItem>GitHub</FooterItem>
+                        <FooterItem>Instagram</FooterItem>
+                        <FooterItem>YouTube</FooterItem>
+                        <FooterItem>twitch</FooterItem>
+                    </ul>
+                </div>
             </div>
-            <div class="pt-16 md:pt-0">
+            <div class="pt-16 md:pt-0 md:pr-20">
                 <p class="text-thoughtbot_zinc font-calibre md:text-lg">© 2023 thoughtbot, inc.</p>
                 <p class="text-thoughtbot_zinc font-calibre md:text-lg">The design of a robot and thoughtbot are registered trademarks of thoughtbot, inc. </p>
             </div>
@@ -50,12 +54,12 @@ import FooterItem from './FooterItem.astro'
                 </div>
                 <div>
                     <span class="text-thoughtbot_zinc font-calibre md:text-lg">Beware of fraudulent thoughtbot job listings</span>
-                    <span class="text-thoughtbot_zinc font-calibre underline hover:no-underline md:text-lg">Learn more</span>
+                    <span class="text-thoughtbot_zinc font-calibre underline hover:no-underline md:text-lg hover:cursor-pointer">Learn more</span>
                 </div>
                 <ul class="flex flex-wrap gap-x-4">
-                    <li class="text-thoughtbot_zinc font-calibre underline hover:no-underline md:text-lg">Code of Conduct</li>
-                    <li class="text-thoughtbot_zinc font-calibre underline hover:no-underline md:text-lg">Accessibility Statement</li>
-                    <li class="text-thoughtbot_zinc font-calibre underline hover:no-underline md:text-lg">Privacy Policy</li>
+                    <li class="text-thoughtbot_zinc font-calibre underline hover:no-underline md:text-lg hover:cursor-pointer">Code of Conduct</li>
+                    <li class="text-thoughtbot_zinc font-calibre underline hover:no-underline md:text-lg hover:cursor-pointer">Accessibility Statement</li>
+                    <li class="text-thoughtbot_zinc font-calibre underline hover:no-underline md:text-lg hover:cursor-pointer">Privacy Policy</li>
                 </ul>
             </div>
         </section>
