@@ -1,61 +1,10 @@
 ---
+import { homeAPI } from "../api/home"
+
 const runtime = Astro.locals.runtime
-const endpoint = "https://staging.api.thoughtbot.blupp.co"
+const data = await homeAPI( runtime.env.ENVIRONMENT, runtime.env.WEB_KEY_STAGING )
 
-// NETWORK CALL TO GET DATA
-const options = {
-
-    headers: {
-
-        "Authorization": "Bearer " + runtime.env.WEB_KEY_STAGING
-
-    }
-
-}
-const network_data = await fetch( endpoint + "/home", options )
-const data_json = await network_data.json()
-const { home, case_studies, resources, meta_tags } = data_json.data
-
-// HOME PROPS
-let masthead = null
-let our_services = null
-let clients = null
-let service_highlight = null
-let case_study = null
-let review_banner = null
-let workshops_and_events = null
-let our_company = null
-let resource = null
-let incubator = null
-let lets_talk = null
-
-home.map( ( data ) => {
-
-	if( data.slug === "masthead" )
-        masthead = data
-    else if( data.slug === "our-services" )
-        our_services = data
-	else if ( data.slug === "clients" )
-        clients = data
-    else if ( data.slug === "service-highlight" )
-        service_highlight = data
-    else if ( data.slug === "case-studies" )
-        case_study = data
-    else if ( data.slug === "review-banner" )
-        review_banner = data
-    else if ( data.slug === "workshops-and-events" )
-        workshops_and_events = data
-    else if ( data.slug === "our-company" )
-        our_company = data
-    else if ( data.slug === "resources" )
-        resource = data
-    else if ( data.slug === "incubator" )
-        incubator = data
-    else if ( data.slug === "lets-talk" )
-        lets_talk = data
-
-})
-
+const { home_data, case_studies, resources, meta_tags } = data
 
 // LAYOUTS
 import Layout from "../layouts/Layout.astro"
@@ -83,16 +32,16 @@ import HeaderBanner from "../components/home/HeaderBanner.astro"
 >
     <HeaderBanner />
     <Header />
-    <Hero data={ masthead } />
-    <OurServices data={ our_services } />
-    <Clients data={ clients } />
-    <ServiceHighlight data={ service_highlight } />
-    <CaseStudies data={ case_studies } home={ case_study } />
-    <ReviewBanner data={ review_banner } />
-    <WorkshopsAndEvents data={ workshops_and_events } />
-    <OurCompany data={ our_company } />
-    <Resources data={ resources } home={ resource } />
-    <Incubator data={ incubator } />
-    <LetsTalk data={ lets_talk } />
+    <Hero data={ home_data.masthead } />
+    <OurServices data={ home_data.our_services } />
+    <Clients data={ home_data.clients } />
+    <ServiceHighlight data={ home_data.service_highlight } />
+    <CaseStudies data={ case_studies } home={ home_data.case_study } />
+    <ReviewBanner data={ home_data.review_banner } />
+    <WorkshopsAndEvents data={ home_data.workshops_and_events } />
+    <OurCompany data={ home_data.our_company } />
+    <Resources data={ resources } home={ home_data.resource } />
+    <Incubator data={ home_data.incubator } />
+    <LetsTalk data={ home_data.lets_talk } />
     <Footer />
 </Layout>
