@@ -11,3 +11,6 @@
 ## Currently missing
 1. robots.txt
 2. Sitemap.xml is not rendering correctly.
+
+## Libraries
+1. Rough Notation - Highlighting text - https://roughnotation.com/
