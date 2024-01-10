@@ -34,7 +34,7 @@
 }
 .markdown a {
 
-    @apply underline !important;
+    @apply underline hover:text-thoughtbot_red !important;
 
 }
 .markdown p {
