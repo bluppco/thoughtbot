@@ -1,7 +1,8 @@
 ---
 // ATOMS
-import Paragraph from "../atoms/Paragraph.astro"
-import ArrowCTA from "../atoms/ArrowCTA.astro"
+import Paragraph from "../../atoms/Paragraph.astro"
+import ArrowCTA from "../../atoms/ArrowCTA.astro"
+import HeadingFive from "../../atoms/heading/Five.astro"
 
 const {
 
@@ -13,7 +14,7 @@ const {
 ---
 <div class="space-y-6">
     <div class="space-y-4">
-        <p class="font-calibre font-medium text-thoughtbot_black text-xl">{ title }</p>
+        <HeadingFive>{ title }</HeadingFive>
         <Paragraph>{ description }</Paragraph>
     </div>
     <ArrowCTA>{ cta }</ArrowCTA>

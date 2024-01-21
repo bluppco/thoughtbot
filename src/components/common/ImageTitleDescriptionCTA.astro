@@ -1,9 +1,9 @@
 ---
 // ATOMS
-import ArrowCTA from "../atoms/ArrowCTA.astro"
+import ArrowCTA from "../../atoms/ArrowCTA.astro"
 
 // CONSTANTS
-import { CDN_LINK, IMAGE_QUALITY, IMAGE_WIDTH_600 } from "../constants/cdn"
+import { CDN_LINK, IMAGE_QUALITY, IMAGE_WIDTH_600 } from "../../constants/cdn"
 
 const {
 
@@ -25,9 +25,9 @@ const {
     </div>
     <div class="space-y-4 md:space-y-8">
         <div>
-            <span class="text-thoughtbot_slate text-xl font-calibre font-medium">{ title }</span>
+            <span class="text-thoughtbot_slate text-2xl font-calibre font-medium">{ title }</span>
             <span> — </span>
-            <span class="text-thoughtbot_slate text-xl font-calibre">{ description }</span>
+            <span class="text-thoughtbot_slate text-2xl font-calibre">{ description }</span>
         </div>
         <ArrowCTA>{ cta }</ArrowCTA>
     </div>
