@@ -54,13 +54,13 @@ const HeaderMobile = () => {
                                 animate={ isOpen ? "open" : "collapsed" }
                                 exit="collapsed"
                                 variants={{
-                                    open: { opacity: 1, height: "200px" },
+                                    open: { opacity: 1, height: "100vh" },
                                     collapsed: { opacity: 0, height: "0px" }
                                 }}
                                 transition={{ duration: 0.3 }}
                                 className="grow"
                             >
-                                <div className="h-full w-full z-10 pt-6">
+                                <div className="flex items-center justify-center h-full z-10">
                                     <ul className="flex flex-col gap-6 text-center">
                                         <HeaderItemJSX>Services</HeaderItemJSX>
                                         <HeaderItemJSX>Case Studies</HeaderItemJSX>

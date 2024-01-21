@@ -1,12 +1,14 @@
 ---
+// IMPORTING MARKED
+import { marked } from "marked"
+
 // ATOMS
-import ArrowCTA from "../atoms/ArrowCTA.astro"
-import H2 from "../atoms/H2.astro"
-import H4 from "../atoms/H4.astro"
-import Paragraph from "../atoms/Paragraph.astro"
+import ArrowCTA from "../../atoms/ArrowCTA.astro"
+import HeadingTwo from "../../atoms/heading/Two.astro"
+import HeadingTwoUppercase from "../../atoms/heading/TwoUppercase.astro"
 
 // CONSTANTS
-import { CDN_LINK, IMAGE_QUALITY, IMAGE_WIDTH_600 } from "../constants/cdn"
+import { CDN_LINK, IMAGE_QUALITY, IMAGE_WIDTH_600 } from "../../constants/cdn"
 
 const {
 
@@ -20,6 +22,8 @@ const {
     height
 
 } = Astro.props
+
+const html = marked.parse( description )
 ---
 <div class="grid grid-cols-1 md:grid-cols-2 gap-20">
     <div class={` ${ is_right ? "order-last" : "order-last md:order-none" } ${ height } w-full`}>
@@ -31,10 +35,10 @@ const {
     </div>
     <div class="flex flex-col justify-center gap-4 md:gap-10">
         <div class="space-y-4">
-            <H2 uppercase={ true } tracking_wide={ true }>{ heading }</H2>
-            <H4>{ title }</H4>
+            <HeadingTwoUppercase>{ heading }</HeadingTwoUppercase>
+            <HeadingTwo>{ title }</HeadingTwo>
         </div>
-        <Paragraph>{ description }</Paragraph>
+        <section set:html={ html } class="markdown" />
         <ArrowCTA>{ cta }</ArrowCTA>
     </div>
 </div>
