@@ -1,3 +1,8 @@
+---
+const { href } = Astro.props
+---
 <li class="hover:underline text-thoughtbot_slate hover:text-thoughtbot_light_red font-calibre transition-all duration-200 cursor-pointer text-lg">
-    <slot />
+    <a href={ href }>
+        <slot />
+    </a>
 </li>

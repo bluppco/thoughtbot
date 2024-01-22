@@ -24,7 +24,7 @@ const html = marked.parse( data.md )
         <div class="grid grid-cols-1 md:grid-cols-5 gap-10">
             <div class="md:col-span-3 space-y-4 md:space-y-10">
                 <Paragraph>{ data.description }</Paragraph>
-                <ArrowCTA>{ data.button_title }</ArrowCTA>
+                <ArrowCTA href={ data.button_link }>{ data.button_title }</ArrowCTA>
             </div>
             <div class="md:col-span-2 md:pl-20 space-y-4">
                 <section set:html={ html } class="markdown" />
