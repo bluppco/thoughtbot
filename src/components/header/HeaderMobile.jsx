@@ -11,9 +11,9 @@ const HeaderMobile = () => {
         <header className="md:hidden top-0 fixed z-30 w-full bg-white">
             <ContainerJSX>
                 <nav className="py-4">
-                    <div className="flex justify-between items-center z-30 relative h-14">
+                    <div className="flex justify-between items-center z-30 relative h-12">
                         <a href="/">
-                            <div className="w-14 aspect-square">
+                            <div className="w-10 aspect-square">
                                 <img
                                     src="/logos/logo.svg"
                                     alt=""
@@ -22,7 +22,7 @@ const HeaderMobile = () => {
                             </div>
                         </a>
                         <div className="flex gap-6 items-center">
-                            <p className="font-calibre text-thoughtbot_slate">Let's Talk</p>
+                            {/*<p className="font-calibre text-thoughtbot_slate">Let's Talk</p>*/}
                             <div onClick={ () => updateOpen( !isOpen ) }>
                                 {
 
