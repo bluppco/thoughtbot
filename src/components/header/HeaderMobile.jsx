@@ -62,9 +62,10 @@ const HeaderMobile = () => {
                             >
                                 <div className="flex items-center justify-center h-full z-10">
                                     <ul className="flex flex-col gap-6 text-center">
-                                        <HeaderItemJSX>Services</HeaderItemJSX>
-                                        <HeaderItemJSX>Case Studies</HeaderItemJSX>
-                                        <HeaderItemJSX>Resources</HeaderItemJSX>
+                                        <HeaderItemJSX href="/services">Services</HeaderItemJSX>
+                                        <HeaderItemJSX href="/case-studies">Case Studies</HeaderItemJSX>
+                                        <HeaderItemJSX href="/resources">Resources</HeaderItemJSX>
+                                        <HeaderItemJSX href="/hire-us">Let's Talk</HeaderItemJSX>
                                         {/*<HeaderItemJSX>Celebrating 20 Years 🎉</HeaderItemJSX>*/}
                                     </ul>
                                 </div>
