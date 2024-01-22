@@ -19,10 +19,10 @@ const { data } = Astro.props
             <div class="pr-16 md:pr-48">
                 <HeadingOne>
                     { data.title }
-                    <Annotate client:load>
-                        <span>a success</span>
-                    </Annotate>
                 </HeadingOne>
+                <Annotate client:load>
+                    <div class="w-fit text-thoughtbot_black font-calibre text-5xl md:text-6xl font-semibold tracking-tight">a success</div>
+                </Annotate>
             </div>
             <Paragraph>{ data.description }</Paragraph>
             <LargeButton href={ data.button_link }>{ data.button_title }</LargeButton>
