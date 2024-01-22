@@ -14,9 +14,9 @@ import Container from "../../layouts/Container.astro"
 const { data } = Astro.props
 ---
 <Container>
-    <section class="grid grid-cols-1 md:grid-cols-2 gap-20 md:gap-4 py-10 md:py-20 mt-32">
-        <div class="space-y-4 md:space-y-10">
-            <div class="md:pr-40">
+    <section class="grid grid-cols-1 md:grid-cols-2 gap-20 md:gap-4 py-10 md:py-20 mt-24">
+        <div class="space-y-4 md:space-y-8">
+            <div class="md:pr-48">
                 <HeadingOne>
                     { data.title }
                     <Annotate client:load>
