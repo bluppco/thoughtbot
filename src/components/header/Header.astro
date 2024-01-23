@@ -8,8 +8,10 @@ import Button from "../../atoms/Button.astro"
 // COMPONENTS
 import HeaderItem from "./HeaderItem.astro"
 import HeaderMobile from "./HeaderMobile"
+
+const { env } = Astro.props
 ---
-<header class="fixed top-0 w-full z-50 bg-white">
+<header class={` ${ env === "staging" ? "top-10" : "top-0" } fixed w-full z-50 bg-white`}>
     <Container>
         <section class="hidden md:block">
             <nav class="flex justify-between items-center h-20">
@@ -31,4 +33,7 @@ import HeaderMobile from "./HeaderMobile"
         </section>
     </Container>
 </header>
-<HeaderMobile client:load />
+<HeaderMobile
+    client:load
+    env = { env }
+/>
