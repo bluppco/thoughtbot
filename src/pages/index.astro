@@ -3,6 +3,7 @@ import { homeAPI } from "../api/home"
 
 const runtime = Astro.locals.runtime
 const data = await homeAPI( runtime.env.ENVIRONMENT, runtime.env.WEB_KEY_STAGING )
+const env = runtime.env.ENVIRONMENT
 
 const { home_data, case_studies, resources, meta_tags } = data
 
@@ -30,17 +31,23 @@ import HeaderBanner from "../components/home/HeaderBanner.astro"
     description={ meta_tags.description }
     image={ meta_tags.cover }
 >
-    <HeaderBanner />
-    <Header />
+    <HeaderBanner env={ env } />
+    <Header env={ env } />
     <Hero data={ home_data.masthead } />
     <OurServices data={ home_data.our_services } />
     <Clients data={ home_data.clients } />
     <ServiceHighlight data={ home_data.service_highlight } />
-    <CaseStudies data={ case_studies } home={ home_data.case_study } />
+    <CaseStudies
+        data={ case_studies }
+        home={ home_data.case_study }
+    />
     <ReviewBanner data={ home_data.review_banner } />
     <WorkshopsAndEvents data={ home_data.workshops_and_events } />
     <OurCompany data={ home_data.our_company } />
-    <Resources data={ resources } home={ home_data.resource } />
+    <Resources
+        data={ resources }
+        home={ home_data.resource }
+    />
     <Incubator data={ home_data.incubator } />
     <LetsTalk data={ home_data.lets_talk } />
     <Footer />

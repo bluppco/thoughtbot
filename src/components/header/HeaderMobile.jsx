@@ -3,17 +3,19 @@ import { useState } from "react"
 import HeaderItemJSX from "./HeaderItem"
 import ContainerJSX from "../../layouts/Container"
 
-const HeaderMobile = () => {
+const HeaderMobile = ( props ) => {
+
+    const { env } = props
 
     const [ isOpen, updateOpen ] = useState( false )
 
     return (
-        <header className="md:hidden top-0 fixed z-30 w-full bg-white">
+        <header className={` ${ env === "staging" ? "top-12" : "top-0" } md:hidden fixed z-30 w-full bg-white`}>
             <ContainerJSX>
                 <nav className="py-4">
-                    <div className="flex justify-between items-center z-30 relative h-14">
+                    <div className="flex justify-between items-center z-30 relative h-12">
                         <a href="/">
-                            <div className="w-14 aspect-square">
+                            <div className="w-10 aspect-square">
                                 <img
                                     src="/logos/logo.svg"
                                     alt=""
@@ -22,7 +24,7 @@ const HeaderMobile = () => {
                             </div>
                         </a>
                         <div className="flex gap-6 items-center">
-                            <p className="font-calibre text-thoughtbot_slate">Let's Talk</p>
+                            {/*<p className="font-calibre text-thoughtbot_slate">Let's Talk</p>*/}
                             <div onClick={ () => updateOpen( !isOpen ) }>
                                 {
 
@@ -62,9 +64,10 @@ const HeaderMobile = () => {
                             >
                                 <div className="flex items-center justify-center h-full z-10">
                                     <ul className="flex flex-col gap-6 text-center">
-                                        <HeaderItemJSX>Services</HeaderItemJSX>
-                                        <HeaderItemJSX>Case Studies</HeaderItemJSX>
-                                        <HeaderItemJSX>Resources</HeaderItemJSX>
+                                        <HeaderItemJSX href="/services">Services</HeaderItemJSX>
+                                        <HeaderItemJSX href="/case-studies">Case Studies</HeaderItemJSX>
+                                        <HeaderItemJSX href="/resources">Resources</HeaderItemJSX>
+                                        <HeaderItemJSX href="/hire-us">Let's Talk</HeaderItemJSX>
                                         {/*<HeaderItemJSX>Celebrating 20 Years 🎉</HeaderItemJSX>*/}
                                     </ul>
                                 </div>

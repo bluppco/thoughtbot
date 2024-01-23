@@ -1,8 +1,12 @@
 const HeaderItemJSX = ( props ) =>{
 
+    const { href } = props
+
     return(
         <li className="font-calibre">
-            { props.children }
+            <a href={ href }>
+                { props.children }
+            </a>
         </li>
 
     )
