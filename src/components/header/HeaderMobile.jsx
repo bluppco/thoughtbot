@@ -3,12 +3,14 @@ import { useState } from "react"
 import HeaderItemJSX from "./HeaderItem"
 import ContainerJSX from "../../layouts/Container"
 
-const HeaderMobile = () => {
+const HeaderMobile = ( props ) => {
+
+    const { env } = props
 
     const [ isOpen, updateOpen ] = useState( false )
 
     return (
-        <header className="md:hidden top-0 fixed z-30 w-full bg-white">
+        <header className={` ${ env === "staging" ? "top-12" : "top-0" } md:hidden fixed z-30 w-full bg-white`}>
             <ContainerJSX>
                 <nav className="py-4">
                     <div className="flex justify-between items-center z-30 relative h-12">
