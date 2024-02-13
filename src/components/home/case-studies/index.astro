@@ -1,0 +1,41 @@
+---
+// IMPORTS ASTRO LAYOUTS
+import Container from "@/layouts/container/index.astro"
+
+// IMPORTS ASTRO COMPONENTS
+import ImageTitleDescriptionCTA from "@/components/common/image-title-description-cta/index.astro"
+
+// IMPORTS ASTRO ATOMS
+import HeadingTwoUppercase from "@/atoms/headings/two/uppercase/index.astro"
+import HeadingTwo from "@/atoms/headings/two/index.astro"
+
+const { data, home } = Astro.props
+---
+<Container>
+    <section class="space-y-4">
+        <div class="space-y-4 md:pr-60">
+            <HeadingTwoUppercase>{ home.title }</HeadingTwoUppercase>
+            <HeadingTwo>{ home.sub_title }</HeadingTwo>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-20 pt-4">
+            {
+
+                data.map( ( item ) => {
+
+                    return(
+                        <ImageTitleDescriptionCTA
+                            src={ item.cover }
+                            alt={ item.title }
+                            title={ item.title }
+                            description={ item.description }
+                            cta={ item.button_title }
+                            href={ item.button_link }
+                        />
+                    )
+
+                })
+
+            }
+        </div>
+    </section>
+</Container>
