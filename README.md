@@ -57,6 +57,7 @@ Visit http://localhost:4321 in your browser to view the cloned website.
 
 - One : text-thoughtbot_black, font-calibre, text-5xl, md:text-6xl, font-semibold
 - Two : text-thoughtbot_black, font-calibre, text-4xl, md:text-5xl, font-semibold
+- Three : text-thoughtbot_black, font-calibre, text-2xl, font-semibold
 - Five : text-thoughtbot_black, font-calibre, text-xl md:text-3xl, font-medium
 
 
