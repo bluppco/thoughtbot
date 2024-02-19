@@ -9,7 +9,7 @@ const {
 
     CDN,
     ENDPOINT,
-    env,
+    ENVIRONMENT,
     PROJECT
 
 } = runtime.env
@@ -35,8 +35,8 @@ import Home from "@/components/home/index.astro"
     PROJECT={ PROJECT }
     title={ meta_tags.title }
 >
-    <HeaderBanner env={ env } />
-    <Header env={ env } />
+    <HeaderBanner env={ ENVIRONMENT } />
+    <Header env={ ENVIRONMENT } />
     <Home
         case_studies={ case_studies }
         CDN={ CDN }
