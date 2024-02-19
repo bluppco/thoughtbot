@@ -5,6 +5,7 @@ import Container from "@/layouts/container/index.astro"
 // IMPORTS ASTRO ATOMS
 import HeadingTwoWhite from "@/atoms/headings/two/white/index.astro"
 import LargeWhiteButton from "@/atoms/buttons/primary/large/white/index.astro"
+import Link from "@/atoms/links/index.astro"
 
 const { data } = Astro.props
 ---
@@ -12,7 +13,9 @@ const { data } = Astro.props
     <Container>
         <div class="md:flex justify-between items-center space-y-4 md:space-y-0">
             <HeadingTwoWhite>{ data.title }</HeadingTwoWhite>
-            <LargeWhiteButton href={ data.button_link }>{ data.button_title }</LargeWhiteButton>
+            <Link href={ data.button_link } aria_label="">
+                <LargeWhiteButton>{ data.button_title }</LargeWhiteButton>
+            </Link>
         </div>
     </Container>
 </section>

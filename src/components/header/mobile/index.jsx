@@ -8,7 +8,7 @@ import { useState } from "react"
 import Container from "@/layouts/container/jsx/index.jsx"
 
 // IMPORTS ASTRO COMPONENTS
-import ListItem from "@/components/header/mobile/list-item/index.jsx"
+import ListItem from "@/atoms/header/mobile/list-item/index.jsx"
 
 // IMPORTS ASTRO ATOMS
 import Link from "@/atoms/links/jsx/index.jsx"
