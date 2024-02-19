@@ -1,11 +1,11 @@
 ---
 const {
 
+    CDN,
     description,
     image,
-    title,
-    CDN_LINK,
     PROJECT,
+    title,
     WEBSITE
 
 } = Astro.props
@@ -28,13 +28,13 @@ import "@/styles/globals.css"
         <meta property="og:url" content={ WEBSITE } />
         <meta property="og:title" content={ title } />
         <meta property="og:description" content={ description } />
-        <meta property="og:image" content={ CDN_LINK + PROJECT + "/" + image } />
+        <meta property="og:image" content={ CDN + PROJECT + "/" + image } />
         <meta property="twitter:card" content="summary_large_image" />
         <meta property="twitter:url" content={ WEBSITE } />
         <meta property="twitter:title" content={ title } />
         <meta property="twitter:description" content={ description } />
-        <meta property="twitter:image" content={ CDN_LINK + PROJECT + "/" + image } />
-        <meta property="twitter:image" content={ CDN_LINK + PROJECT + "/" + image } />
+        <meta property="twitter:image" content={ CDN + PROJECT + "/" + image } />
+        <meta property="twitter:image" content={ CDN + PROJECT + "/" + image } />
         <link rel="icon" type="image/x-icon" href="/thoughtbot-favicon.svg">
     </head>
     <body class="antialiased">

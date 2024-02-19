@@ -3,8 +3,8 @@
 import Container from '@/layouts/container/index.astro'
 
 // IMPORTS ASTRO COMPONENTS
-import Li from './li/index.astro'
-import TargetBlankLi from "./li/target-blank/index.astro"
+import ListItem from '@/components/footer/list-item/index.astro'
+import TargetBlankListItem from "@/components/footer/list-item/target-blank/index.astro"
 
 // IMPORTS ASTRO ATOMS
 import Link from "@/atoms/links/index.astro"
@@ -19,29 +19,29 @@ import Link from "@/atoms/links/index.astro"
             </div>
             <div class="grid md:grid-cols-3 gap-4">
                 <ul>
-                    <Li href="/services">Services</Li>
-                    <Li href="/case-studies">Case Studies</Li>
-                    <Li href="/resources">Resources</Li>
+                    <ListItem href="/services">Services</ListItem>
+                    <ListItem href="/case-studies">Case Studies</ListItem>
+                    <ListItem href="/resources">Resources</ListItem>
                     <li class="text-lg underline hover:no-underline text-thoughtbot_light_orange hover:text-thoughtbot_light_red font-calibre transition-all duration-200 cursor-pointer">
                         <Link href="/hire-us" aria_label="">Let's Talk</Link>
                     </li>
                 </ul>
                 <div class="flex md:justify-end">
                     <ul>
-                        <Li href="/our-company">Our Company</Li>
-                        <Li href="/jobs">Careers</Li>
-                        <Li href="/playbook/our-company/purpose-mission-values">Purpose</Li>
-                        <Li href="/blog">Blog</Li>
-                        <TargetBlankLi href="https://github.com/sponsors/thoughtbot">Sponsor</Li>
+                        <ListItem href="/our-company">Our Company</ListItem>
+                        <ListItem href="/jobs">Careers</ListItem>
+                        <ListItem href="/playbook/our-company/purpose-mission-values">Purpose</ListItem>
+                        <ListItem href="/blog">Blog</ListItem>
+                        <TargetBlankListItem href="https://github.com/sponsors/thoughtbot">Sponsor</TargetBlankListItem>
                     </ul>
                 </div>
                 <div class="flex md:justify-end">
                     <ul>
-                        <TargetBlankLi href="https://thoughtbot.social/@thoughtbot">Mastodon</TargetBlankLi>
-                        <TargetBlankLi href="https://github.com/thoughtbot">GitHub</TargetBlankLi>
-                        <TargetBlankLi href="https://www.instagram.com/thoughtbot/">Instagram</TargetBlankLi>
-                        <TargetBlankLi href="https://www.youtube.com/@thoughtbot">YouTube</TargetBlankLi>
-                        <TargetBlankLi href="https://www.twitch.tv/thoughtbot">twitch</TargetBlankLi>
+                        <TargetBlankListItem href="https://thoughtbot.social/@thoughtbot">Mastodon</TargetBlankListItem>
+                        <TargetBlankListItem href="https://github.com/thoughtbot">GitHub</TargetBlankListItem>
+                        <TargetBlankListItem href="https://www.instagram.com/thoughtbot/">Instagram</TargetBlankListItem>
+                        <TargetBlankListItem href="https://www.youtube.com/@thoughtbot">YouTube</TargetBlankListItem>
+                        <TargetBlankListItem href="https://www.twitch.tv/thoughtbot">twitch</TargetBlankListItem>
                     </ul>
                 </div>
             </div>
@@ -72,7 +72,7 @@ import Link from "@/atoms/links/index.astro"
                         <Link href="/accessibility-statement" aria_label="">Accessibility Statement</Link>
                     </li>
                     <li class="text-thoughtbot_zinc font-calibre underline hover:no-underline md:text-lg hover:cursor-pointer">
-                        <TargetBlankLi href="https://www.iubenda.com/privacy-policy/7827608" aria_label="">Privacy Policy</TargetBlankLi>
+                        <TargetBlankListItem href="https://www.iubenda.com/privacy-policy/7827608" aria_label="">Privacy Policy</TargetBlankListItem>
                     </li>
                 </ul>
             </div>

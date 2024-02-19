@@ -1,17 +1,19 @@
 ---
 // IMPORTS ASTRO ATOMS
-import ArrowCTA from "../../../atoms/buttons/arrow/index.astro"
+import ArrowCTA from "@/atoms/buttons/arrow/index.astro"
 import Picture from "@/atoms/picture/index.astro"
 import Link from "@/atoms/links/index.astro"
 
 const {
 
-    src,
     alt,
-    title,
-    description,
+    CDN,
     cta,
-    href
+    description,
+    href,
+    PROJECT,
+    src,
+    title
 
 } = Astro.props
 ---
@@ -22,6 +24,8 @@ const {
                 src={ src }
                 alt={ alt }
                 image_width="600"
+                CDN={ CDN }
+                PROJECT={ PROJECT }
             />
         </div>
     </Link>

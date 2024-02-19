@@ -2,10 +2,10 @@
 // IMPORTS ASTRO ATOMS
 import Link from "@/atoms/links/index.astro"
 
-const { href } = Astro.props
+const { aria_label, href } = Astro.props
 ---
 <li class="hover:underline text-thoughtbot_slate hover:text-thoughtbot_light_red font-calibre transition-all duration-200 cursor-pointer text-lg">
-    <Link href={ href } aria_label="">
+    <Link href={ href } aria_label={ aria_label }>
         <slot />
     </Link>
 </li>

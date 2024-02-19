@@ -1,15 +1,15 @@
 ---
-// IMPORTS LAYOUTS
+// IMPORTS ASTRO LAYOUTS
 import Container from "@/layouts/container/index.astro"
 
-// IMPORTS ATOMS
+// IMPORTS ASTRO ATOMS
 import PrimaryButton from "@/atoms/buttons/primary/index.astro"
 
-// IMPORTS COMPONENTS
-import Li from "./li/index.astro"
-import HeaderMobile from "./mobile/index"
+// IMPORTS ASTRO COMPONENTS
+import ListItem from "@/components/header/list-item/index.astro"
+import HeaderMobile from "@/components/header/mobile/index"
 
-// IMPORTS ATOMS
+// IMPORTS ASTRO ATOMS
 import Link from "@/atoms/links/index.astro"
 
 const { env } = Astro.props
@@ -25,9 +25,9 @@ const { env } = Astro.props
                 </Link>
                 <div class="flex items-center gap-8">
                     <ul class="flex items-center gap-8">
-                        <Li href="/services">Services</Li>
-                        <Li href="/case-studies">Case Studies</Li>
-                        <Li href="/resources">Resources</Li>
+                        <ListItem href="/services" aria_label="">Services</ListItem>
+                        <ListItem href="/case-studies" aria_label="">Case Studies</ListItem>
+                        <ListItem href="/resources" aria_label="">Resources</ListItem>
                     </ul>
                     <Link href="/hire-us" aria_label="">
                         <PrimaryButton>Let’s get started!</PrimaryButton>

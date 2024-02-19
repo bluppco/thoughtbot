@@ -1,60 +1,48 @@
 ---
+// RUNTIME
+const runtime = Astro.locals.runtime
+
+// API
 import { homeAPI } from "@/api/home"
 
-const runtime = Astro.locals.runtime
-const data = await homeAPI( runtime.env.ENVIRONMENT, runtime.env.WEB_KEY_STAGING )
-const env = runtime.env.ENVIRONMENT
-const PROJECT = runtime.env.ENVIRONMENT
-const CDN_LINK = runtime.env.ENVIRONMENT
-const ENDPOINT = runtime.env.ENVIRONMENT
+const {
+
+    CDN,
+    ENDPOINT,
+    env,
+    PROJECT
+
+} = runtime.env
+
+const data = await homeAPI( runtime.env.ENVIRONMENT, runtime.env.WEB_KEY_STAGING, ENDPOINT )
 
 const { home_data, case_studies, resources, meta_tags } = data
 
-// LAYOUTS
+// IMPORTS ASTRO LAYOUTS
 import Layout from "@/layouts/layout/index.astro"
 
-// COMPONENTS
+// IMPORTS ASTRO COMPONENTS
 import Header from "@/components/header/index.astro"
-import Hero from "@/components/home/hero/index.astro"
-import OurServices from "@/components/home/our-services/index.astro"
-import Clients from "@/components/home/clients/index.astro"
-import ServiceHighlight from "@/components/home/service-highlight/index.astro"
-import CaseStudies from "@/components/home/case-studies/index.astro"
-import ReviewBanner from "@/components/home/review-banner/index.astro"
-import WorkshopsAndEvents from "@/components/home/workshops-and-events/index.astro"
-import OurCompany from "@/components/home/our-company/index.astro"
-import Resources from "@/components/home/resources/index.astro"
-import Incubator from "@/components/home/incubator/index.astro"
-import LetsTalk from "@/components/home/lets-talk/index.astro"
 import Footer from "@/components/footer/index.astro"
 import HeaderBanner from "@/components/home/header-banner/index.astro"
+import Home from "@/components/home/index.astro"
 ---
 <Layout
-    title={ meta_tags.title }
+    CDN={ CDN }
     description={ meta_tags.description }
+    ENDPOINT={ ENDPOINT }
     image={ meta_tags.cover }
     PROJECT={ PROJECT }
-    CDN_LINK={ CDN_LINK }
-    ENDPOINT={ ENDPOINT }
+    title={ meta_tags.title }
 >
     <HeaderBanner env={ env } />
     <Header env={ env } />
-    <Hero data={ home_data.masthead } />
-    <OurServices data={ home_data.our_services } />
-    <Clients data={ home_data.clients } />
-    <ServiceHighlight data={ home_data.service_highlight } />
-    <CaseStudies
-        data={ case_studies }
-        home={ home_data.case_study }
+    <Home
+        case_studies={ case_studies }
+        CDN={ CDN }
+        home_data={ home_data }
+        PROJECT={ PROJECT }
+        resources={ resources }
     />
-    <ReviewBanner data={ home_data.review_banner } />
-    <WorkshopsAndEvents data={ home_data.workshops_and_events } />
-    <OurCompany data={ home_data.our_company } />
-    <Resources
-        data={ resources }
-        home={ home_data.resource }
-    />
-    <Incubator data={ home_data.incubator } />
-    <LetsTalk data={ home_data.lets_talk } />
     <Footer />
 </Layout>

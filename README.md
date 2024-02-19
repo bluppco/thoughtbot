@@ -1,4 +1,5 @@
 # Thought Bot
+
 Current Website: https://thoughtbot.com
 \
 \
@@ -13,24 +14,29 @@ Blupp Website: https://thoughtbot.blupp.co
 ### Overview
 
 #### Tech Stack
+
 - Astro
 - Tailwind CSS
 - JavaScript
 - MDX
 
 #### CDN
+
 - Cloudflare
 -  Bunny ( for images )
 
 ### Installation
 
 #### Clone the repository
-git clone https://github.com/your-username/thoughtbot-clone.git
+
+git clone https://github.com/bluppco/thoughtbot.git
 
 #### Navigate to the project directory
-cd thoughtbot-clone
+
+cd thoughtbot
 
 #### Install dependencies
+
 npm install
 
 #### Start the development server
@@ -48,11 +54,10 @@ Visit http://localhost:4321 in your browser to view the cloned website.
 4. Calibre Bold
 
 #### Headings
-- One : HeadingOne - text-thoughtbot_black, font-calibre, text-48px, md:text-60px, font-semibold, tracking-tight
-- Two : HeadingTwo - text-thoughtbot_black, font-calibre, text-36px, md:text-48px, font-semibold, tracking-tight, leading-9
-- TwoUppercase : HeadingTwoUppercase - text-thoughtbot_gray, font-calibre, md:text-18px, tracking-widest, uppercase
-- TwoWhite : HeadingTwoWhite text-thoughtbot_black, font-calibre, text-36px, md:text-48px, font-semibold, tracking-tight, leading-9, text-white
-- Five : HeadingFive - text-thoughtbot_black, font-calibre, text-20px md:text-30px, font-medium, tracking-tight
+
+- One : text-thoughtbot_black, font-calibre, text-5xl, md:text-6xl, font-semibold
+- Two : text-thoughtbot_black, font-calibre, text-4xl, md:text-5xl, font-semibold
+- Five : text-thoughtbot_black, font-calibre, text-xl md:text-3xl, font-medium
 
 
 ## Currently missing

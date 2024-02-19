@@ -1,8 +1,6 @@
-import { endpointFetch } from "../../functions/endpoint"
+export const homeAPI = async ( environment, WEB_KEY_STAGING, ENDPOINT ) => {
 
-export const homeAPI = async ( environment, WEB_KEY_STAGING ) => {
-
-    const endpoint = endpointFetch( environment )
+    const endpoint = ENDPOINT
 
     // NETWORK CALL TO GET DATA
     const options = {

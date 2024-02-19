@@ -9,7 +9,14 @@ import ImageTitleDescriptionCTA from "@/components/common/image-title-descriptio
 import HeadingTwoUppercase from "@/atoms/headings/two/uppercase/index.astro"
 import HeadingTwo from "@/atoms/headings/two/index.astro"
 
-const { data, home } = Astro.props
+const {
+
+    CDN,
+    data,
+    home,
+    PROJECT
+
+} = Astro.props
 ---
 <Container>
     <section class="space-y-4">
@@ -24,12 +31,14 @@ const { data, home } = Astro.props
 
                     return(
                         <ImageTitleDescriptionCTA
-                            src={ item.cover }
                             alt={ item.title }
-                            title={ item.title }
-                            description={ item.description }
+                            CDN={ CDN }
                             cta={ item.button_title }
+                            description={ item.description }
                             href={ item.button_link }
+                            PROJECT={ PROJECT }
+                            src={ item.cover }
+                            title={ item.title }
                         />
                     )
 

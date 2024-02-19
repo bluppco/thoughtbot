@@ -10,7 +10,13 @@ import Annotate from "@/atoms/annotate"
 import Link from "@/atoms/links/index.astro"
 import Picture from "@/atoms/picture/index.astro"
 
-const { data } = Astro.props
+const {
+
+    CDN,
+    data,
+    PROJECT
+
+} = Astro.props
 ---
 <Container>
     <section class="grid grid-cols-1 md:grid-cols-2 gap-20 md:gap-4 py-10 md:py-20 mt-36">
@@ -32,6 +38,8 @@ const { data } = Astro.props
                     src={ data.cover }
                     alt=""
                     image_width="600"
+                    CDN={ CDN }
+                    PROJECT={ PROJECT }
                 />
             </div>
         </div>
