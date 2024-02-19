@@ -8,6 +8,17 @@ import TargetBlankListItem from "@/components/footer/list-item/target-blank/inde
 
 // IMPORTS ASTRO ATOMS
 import Link from "@/atoms/links/index.astro"
+
+import { getCollection } from 'astro:content'
+
+let footer_column_two = await getCollection('footer-column-two')
+footer_column_two = footer_column_two.sort((a, b) => a.data.order - b.data.order).filter( ( item ) => item.data.live )
+
+let footer_column_three = await getCollection('footer-column-three')
+footer_column_three = footer_column_three.sort((a, b) => a.data.order - b.data.order).filter( ( item ) => item.data.live )
+
+let footer_column_four = await getCollection('footer-column-four')
+footer_column_four = footer_column_four.sort((a, b) => a.data.order - b.data.order).filter( ( item ) => item.data.live )
 ---
 <footer class="bg-thoughtbot_black text-slate-50 py-16">
     <Container>
@@ -19,29 +30,58 @@ import Link from "@/atoms/links/index.astro"
             </div>
             <div class="grid md:grid-cols-3 gap-4">
                 <ul>
-                    <ListItem href="/services">Services</ListItem>
-                    <ListItem href="/case-studies">Case Studies</ListItem>
-                    <ListItem href="/resources">Resources</ListItem>
+                    {
+
+                        footer_column_two.map( ( value, index ) => {
+
+                            if ( index < 3 ) {
+
+                                return(
+                                    <ListItem href={ value.data.link } aria_label="">{ value.data.title }</ListItem>
+                                )
+
+                            }
+
+                        })
+
+                    }
                     <li class="text-lg underline hover:no-underline text-thoughtbot_light_orange hover:text-thoughtbot_light_red font-calibre transition-all duration-200 cursor-pointer">
                         <Link href="/hire-us" aria_label="">Let's Talk</Link>
                     </li>
                 </ul>
                 <div class="flex md:justify-end">
                     <ul>
-                        <ListItem href="/our-company">Our Company</ListItem>
-                        <ListItem href="/jobs">Careers</ListItem>
-                        <ListItem href="/playbook/our-company/purpose-mission-values">Purpose</ListItem>
-                        <ListItem href="/blog">Blog</ListItem>
+                        {
+
+                            footer_column_three.map( ( value, index ) => {
+
+                                if ( index < 4 ) {
+
+                                    return(
+                                        <ListItem href={ value.data.link } aria_label="">{ value.data.title }</ListItem>
+                                    )
+
+                                }
+
+                            })
+
+                        }
                         <TargetBlankListItem href="https://github.com/sponsors/thoughtbot">Sponsor</TargetBlankListItem>
                     </ul>
                 </div>
                 <div class="flex md:justify-end">
                     <ul>
-                        <TargetBlankListItem href="https://thoughtbot.social/@thoughtbot">Mastodon</TargetBlankListItem>
-                        <TargetBlankListItem href="https://github.com/thoughtbot">GitHub</TargetBlankListItem>
-                        <TargetBlankListItem href="https://www.instagram.com/thoughtbot/">Instagram</TargetBlankListItem>
-                        <TargetBlankListItem href="https://www.youtube.com/@thoughtbot">YouTube</TargetBlankListItem>
-                        <TargetBlankListItem href="https://www.twitch.tv/thoughtbot">twitch</TargetBlankListItem>
+                        {
+
+                            footer_column_four.map( ( value ) => {
+
+                                return(
+                                <TargetBlankListItem href={ value.data.link }>{ value.data.title }</TargetBlankListItem>
+                                )
+
+                            })
+
+                        }
                     </ul>
                 </div>
             </div>

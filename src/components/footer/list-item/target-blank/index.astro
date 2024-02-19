@@ -2,7 +2,7 @@
 // IMPORTS ASTRO ATOMS
 import TargetBlankLink from "@/atoms/links/target-blank/index.astro"
 
-const { href } = Astro.props
+const { aria_label, href } = Astro.props
 ---
 <li class="text-lg md:text-xl underline hover:no-underline hover:text-thoughtbot_light_red font-calibre transition-all duration-200 cursor-pointer">
     <TargetBlankLink href={ href } aria_label="">
