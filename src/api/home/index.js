@@ -1,7 +1,5 @@
 export const homeAPI = async ( environment, WEB_KEY_STAGING, ENDPOINT ) => {
 
-    const endpoint = ENDPOINT
-
     // NETWORK CALL TO GET DATA
     const options = {
 
@@ -13,7 +11,7 @@ export const homeAPI = async ( environment, WEB_KEY_STAGING, ENDPOINT ) => {
 
     }
     // NETWORK CALL TO GET DATA
-    const network_data = await fetch( endpoint + "/home", options )
+    const network_data = await fetch( ENDPOINT + "/home", options )
     const data_json = await network_data.json()
 
     const { home, case_studies, resources, meta_tags } = data_json.data
