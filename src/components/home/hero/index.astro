@@ -1,0 +1,47 @@
+---
+// IMPORTS ASTRO LAYOUTS
+import Container from "@/layouts/container/index.astro"
+
+// IMPORTS ASTRO ATOMS
+import HeadingOne from "@/atoms/headings/one/index.astro"
+import LargeButton from "@/atoms/buttons/primary/large/index.astro"
+import Paragraph from "@/atoms/paragraph/index.astro"
+import Annotate from "@/atoms/annotate"
+import Link from "@/atoms/links/index.astro"
+import Picture from "@/atoms/picture/index.astro"
+
+const {
+
+    CDN,
+    data,
+    PROJECT
+
+} = Astro.props
+---
+<Container>
+    <section class="grid grid-cols-1 md:grid-cols-2 gap-20 md:gap-4 py-10 md:py-20 mt-36">
+        <div class="space-y-6 md:space-y-8">
+            <div class="md:pr-48">
+                <HeadingOne>{ data.title }</HeadingOne>
+                <Annotate client:load>
+                    <div class="w-fit text-thoughtbot_black font-calibre text-5xl md:text-6xl font-semibold tracking-tight">a success</div>
+                </Annotate>
+            </div>
+            <Paragraph>{ data.description }</Paragraph>
+            <Link href={ data.button_link } aria_label="">
+                <LargeButton>{ data.button_title }</LargeButton>
+            </Link>
+        </div>
+        <div>
+            <div class="w-full aspect-[3/2]">
+                <Picture
+                    src={ data.cover }
+                    alt=""
+                    image_width="600"
+                    CDN={ CDN }
+                    PROJECT={ PROJECT }
+                />
+            </div>
+        </div>
+    </section>
+</Container>
