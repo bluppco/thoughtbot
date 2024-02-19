@@ -1,0 +1,71 @@
+---
+// IMPORTS ASTRO COMPONENTS
+import Hero from "@/components/home/hero/index.astro"
+import OurServices from "@/components/home/our-services/index.astro"
+import Clients from "@/components/home/clients/index.astro"
+import ServiceHighlight from "@/components/home/service-highlight/index.astro"
+import CaseStudies from "@/components/home/case-studies/index.astro"
+import ReviewBanner from "@/components/home/review-banner/index.astro"
+import WorkshopsAndEvents from "@/components/home/workshops-and-events/index.astro"
+import OurCompany from "@/components/home/our-company/index.astro"
+import Resources from "@/components/home/resources/index.astro"
+import Incubator from "@/components/home/incubator/index.astro"
+import LetsTalk from "@/components/home/lets-talk/index.astro"
+
+const {
+
+    case_studies,
+    CDN,
+    home_data,
+    PROJECT,
+    resources
+
+} = Astro.props
+---
+<Hero
+    CDN={ CDN }
+    data={ home_data.masthead }
+    PROJECT={ PROJECT }
+/>
+<OurServices data={ home_data.our_services } />
+<Clients
+    CDN={ CDN }
+    data={ home_data.clients }
+    PROJECT={ PROJECT }
+/>
+<ServiceHighlight
+    CDN={ CDN }
+    data={ home_data.service_highlight }
+    PROJECT={ PROJECT }
+/>
+<CaseStudies
+    CDN={ CDN }
+    data={ case_studies }
+    home={ home_data.case_study }
+    PROJECT={ PROJECT }
+/>
+<ReviewBanner
+    CDN={ CDN }
+    data={ home_data.review_banner }
+    PROJECT={ PROJECT }
+/>
+<WorkshopsAndEvents
+    CDN={ CDN }
+    data={ home_data.workshops_and_events }
+    PROJECT={ PROJECT }
+/>
+<OurCompany
+    CDN={ CDN }
+    data={ home_data.our_company }
+    PROJECT={ PROJECT }
+/>
+<Resources
+    data={ resources }
+    home={ home_data.resource }
+/>
+<Incubator
+    CDN={ CDN }
+    data={ home_data.incubator }
+    PROJECT={ PROJECT }
+/>
+<LetsTalk data={ home_data.lets_talk } />

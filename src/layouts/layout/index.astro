@@ -1,0 +1,43 @@
+---
+const {
+
+    CDN,
+    description,
+    image,
+    PROJECT,
+    title,
+    WEBSITE
+
+} = Astro.props
+
+// CUSTOM STYLES
+import "@/styles/custom.css"
+import "@/styles/globals.css"
+
+---
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width" />
+        <title>{ title }</title>
+        <meta name="title" content={ title } />
+        <meta name="description" content={ description } />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={ WEBSITE } />
+        <meta property="og:title" content={ title } />
+        <meta property="og:description" content={ description } />
+        <meta property="og:image" content={ CDN + PROJECT + "/" + image } />
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:url" content={ WEBSITE } />
+        <meta property="twitter:title" content={ title } />
+        <meta property="twitter:description" content={ description } />
+        <meta property="twitter:image" content={ CDN + PROJECT + "/" + image } />
+        <meta property="twitter:image" content={ CDN + PROJECT + "/" + image } />
+        <link rel="icon" type="image/x-icon" href="/thoughtbot-favicon.svg">
+    </head>
+    <body class="antialiased">
+        <slot />
+    </body>
+</html>

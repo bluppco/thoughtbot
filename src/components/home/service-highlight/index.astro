@@ -1,0 +1,30 @@
+---
+// IMPORTS ASTRO LAYOUTS
+import Container from "@/layouts/container/index.astro"
+
+// IMPORTS ASTRO COMPONENTS
+import ImageHeadingTitleDescriptionCTAAligned from "@/components/common/image-heading-title-description-cta-aligned/index.astro"
+
+const {
+
+    CDN,
+    data,
+    PROJECT
+
+} = Astro.props
+---
+<Container>
+    <section class="py-10 md:py-20">
+        <ImageHeadingTitleDescriptionCTAAligned
+            alt={ data.title }
+            CDN={ CDN }
+            cta_link={ data.button_link }
+            cta={ data.button_title }
+            description={ data.description }
+            heading={ data.title }
+            PROJECT={ PROJECT }
+            src={ data.cover }
+            title={ data.sub_title }
+        />
+    </section>
+</Container>

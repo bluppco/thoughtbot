@@ -1,0 +1,50 @@
+---
+// IMPORTS MARKED
+import { marked } from "marked"
+
+// IMPORTS ASTRO ATOMS
+import ArrowCTA from "@/atoms/buttons/arrow/index.astro"
+import HeadingTwo from "@/atoms/headings/two/index.astro"
+import HeadingTwoUppercase from "@/atoms/headings/two/uppercase/index.astro"
+import ContainPicture from "@/atoms/picture/contain/index.astro"
+import Link from "@/atoms/links/index.astro"
+
+const {
+
+    alt,
+    CDN,
+    cta_link,
+    cta,
+    description,
+    heading,
+    height,
+    is_right,
+    PROJECT,
+    src,
+    title
+
+} = Astro.props
+
+const html = marked.parse( description )
+---
+<div class="grid grid-cols-1 md:grid-cols-2 gap-20">
+    <div class={` ${ is_right ? "order-last" : "order-last md:order-none" } ${ height } w-full`}>
+        <ContainPicture
+            alt={ alt }
+            CDN={ CDN }
+            image_width="600"
+            PROJECT={ PROJECT }
+            src={ src }
+        />
+    </div>
+    <div class="flex flex-col justify-center gap-4 md:gap-10">
+        <div class="space-y-4">
+            <HeadingTwoUppercase>{ heading }</HeadingTwoUppercase>
+            <HeadingTwo>{ title }</HeadingTwo>
+        </div>
+        <section set:html={ html } class="markdown" />
+        <Link href={ cta_link } aria_label="">
+            <ArrowCTA>{ cta }</ArrowCTA>
+        </Link>
+    </div>
+</div>

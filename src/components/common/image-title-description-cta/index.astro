@@ -1,0 +1,42 @@
+---
+// IMPORTS ASTRO ATOMS
+import ArrowCTA from "@/atoms/buttons/arrow/index.astro"
+import Picture from "@/atoms/picture/index.astro"
+import Link from "@/atoms/links/index.astro"
+
+const {
+
+    alt,
+    CDN,
+    cta,
+    description,
+    href,
+    PROJECT,
+    src,
+    title
+
+} = Astro.props
+---
+<div class="space-y-4 rounded overflow-hidden">
+    <Link href={ href } aria_label="">
+        <div class="overflow-hidden w-full aspect-[3/2] bg-zinc-200">
+            <Picture
+                src={ src }
+                alt={ alt }
+                image_width="600"
+                CDN={ CDN }
+                PROJECT={ PROJECT }
+            />
+        </div>
+    </Link>
+    <div class="space-y-4 md:space-y-8">
+        <div>
+            <strong><span class="text-thoughtbot_slate text-xl font-calibre_semibold">{ title }</span></strong>
+            <span> — </span>
+            <span class="text-thoughtbot_slate text-2xl font-calibre">{ description }</span>
+        </div>
+        <Link href={ href } aria_label="">
+            <ArrowCTA>{ cta }</ArrowCTA>
+        </Link>
+    </div>
+</div>
