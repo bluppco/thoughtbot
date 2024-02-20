@@ -28,7 +28,10 @@ import { frontmatter as benchmarking } from "@/content/benchmarking/home.mdx"
     <HeaderBanner />
     <section class="py-40">
         <Container>
-            <BenchmarkingJSX client:load data={ benchmarking }/>
+            <BenchmarkingJSX
+                client:only
+                data={ benchmarking }
+            />
         </Container>
     </section>
     <Footer />

@@ -26,12 +26,12 @@ const {
         <div class="space-y-6 md:space-y-8">
             <div class="md:pr-48">
                 <HeadingOne>{ data.title }</HeadingOne>
-                <Annotate client:load>
+                <Annotate client:only>
                     <div class="w-fit text-thoughtbot_black font-calibre text-5xl md:text-6xl font-semibold tracking-tight">a success</div>
                 </Annotate>
             </div>
             <Paragraph>{ data.description }</Paragraph>
-            <Link href={ data.button_link } aria_label="">
+            <Link href={ data.button_link } aria_label={ data.button_title }>
                 <LargeButton>{ data.button_title }</LargeButton>
             </Link>
         </div>
