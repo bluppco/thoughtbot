@@ -1,15 +1,23 @@
 ---
+
 // IMPORTS ASTRO LAYOUTS
 import Container from "@/layouts/container/index.astro"
 
 // IMPORTS ASTRO COMPONENTS
-import TitleDescriptionCTA from "@/components/common/title-description-cta/index.astro"
+import Resource from "@/components/home/resources/resource/index.astro"
 
 // IMPORTS ASTRO ATOMS
 import HeadingTwo from "@/atoms/headings/two/index.astro"
 import HeadingTwoUppercase from "@/atoms/headings/two/uppercase/index.astro"
 
-const { data, home } = Astro.props
+// ASTRO PROPS
+const {
+
+    data,
+    home
+
+} = Astro.props
+
 ---
 <Container>
     <section class="space-y-10 py-10 md:py-20">
@@ -23,11 +31,11 @@ const { data, home } = Astro.props
                 data.map( ( value ) => {
 
                     return (
-                        <TitleDescriptionCTA
-                            title={ value.title }
-                            description={ value.description }
-                            cta={ value.button_title }
+                        <Resource
                             cta_link={ value.button_link }
+                            cta={ value.button_title }
+                            description={ value.description }
+                            title={ value.title }
                         />
                     )
 

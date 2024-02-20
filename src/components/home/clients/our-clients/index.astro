@@ -1,0 +1,50 @@
+---
+
+// IMPORTS ASTRO ATOMS
+import ArrowCTA from "@/atoms/buttons/arrow/index.astro"
+import ContainPicture from "@/atoms/picture/contain/index.astro"
+import HeadingTwo from "@/atoms/headings/two/index.astro"
+import HeadingTwoUppercase from "@/atoms/headings/two/uppercase/index.astro"
+import Link from "@/atoms/links/index.astro"
+
+// IMPORTS MARKED
+import { marked } from "marked"
+
+// ASTRO PROPS
+const {
+
+    alternative_text,
+    CDN,
+    cta_link,
+    cta,
+    description,
+    heading,
+    PROJECT,
+    source,
+    title
+
+} = Astro.props
+
+const html = marked.parse( description )
+---
+<div class="grid grid-cols-1 md:grid-cols-2 gap-20">
+    <div class="flex flex-col justify-center gap-4 md:gap-10">
+        <div class="space-y-4">
+            <HeadingTwoUppercase>{ heading }</HeadingTwoUppercase>
+            <HeadingTwo>{ title }</HeadingTwo>
+        </div>
+        <section set:html={ html } class="markdown" />
+        <Link href={ cta_link } aria_label={  "Explore " + cta }>
+            <ArrowCTA>{ cta }</ArrowCTA>
+        </Link>
+    </div>
+    <div class="aspect-square w-full">
+        <ContainPicture
+            alternative_text={ alternative_text }
+            CDN={ CDN }
+            image_width="600"
+            PROJECT={ PROJECT }
+            source={ source }
+        />
+    </div>
+</div>

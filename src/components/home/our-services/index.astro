@@ -1,20 +1,23 @@
 ---
-// IMPORTS MARKED
-import { marked } from "marked"
 
 // IMPORTS ASTRO LAYOUTS
 import Container from "@/layouts/container/index.astro"
 
 // IMPORTS ASTRO ATOMS
 import ArrowCTA from "@/atoms/buttons/arrow/index.astro"
-import HeadingTwoUppercase from "@/atoms/headings/two/uppercase/index.astro"
 import HeadingTwo from "@/atoms/headings/two/index.astro"
-import Paragraph from "@/atoms/paragraph/index.astro"
+import HeadingTwoUppercase from "@/atoms/headings/two/uppercase/index.astro"
 import Link from "@/atoms/links/index.astro"
+import Paragraph from "@/atoms/paragraph/index.astro"
 
+// IMPORTS MARKED
+import { marked } from "marked"
+
+// ASTRO PROPS
 const { data } = Astro.props
 
 const html = marked.parse( data.md )
+
 ---
 <Container>
     <section class="py-10 md:py-20 space-y-4 md:space-y-10">
@@ -25,7 +28,7 @@ const html = marked.parse( data.md )
         <div class="grid grid-cols-1 md:grid-cols-5 gap-10">
             <div class="md:col-span-3 space-y-4 md:space-y-10">
                 <Paragraph>{ data.description }</Paragraph>
-                <Link href={ data.button_link } aria_label="">
+                <Link href={ data.button_link } aria_label={ data.button_title }>
                     <ArrowCTA>{ data.button_title }</ArrowCTA>
                 </Link>
             </div>

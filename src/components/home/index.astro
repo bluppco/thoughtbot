@@ -1,27 +1,36 @@
 ---
+
 // IMPORTS ASTRO COMPONENTS
-import Hero from "@/components/home/hero/index.astro"
-import OurServices from "@/components/home/our-services/index.astro"
-import Clients from "@/components/home/clients/index.astro"
-import ServiceHighlight from "@/components/home/service-highlight/index.astro"
 import CaseStudies from "@/components/home/case-studies/index.astro"
-import ReviewBanner from "@/components/home/review-banner/index.astro"
-import WorkshopsAndEvents from "@/components/home/workshops-and-events/index.astro"
-import OurCompany from "@/components/home/our-company/index.astro"
-import Resources from "@/components/home/resources/index.astro"
+import Clients from "@/components/home/clients/index.astro"
+import Footer from "@/components/common/footer/index.astro"
+import Header from "@/components/common/header/index.astro"
+import HeaderBanner from "@/components/home/header-banner/index.astro"
+import Hero from "@/components/home/hero/index.astro"
 import Incubator from "@/components/home/incubator/index.astro"
 import LetsTalk from "@/components/home/lets-talk/index.astro"
+import OurCompany from "@/components/home/company/index.astro"
+import OurServices from "@/components/home/our-services/index.astro"
+import Resources from "@/components/home/resources/index.astro"
+import ReviewBanner from "@/components/home/review-banner/index.astro"
+import ServiceHighlight from "@/components/home/service/index.astro"
+import WorkshopsAndEvents from "@/components/home/workshops-and-events/index.astro"
 
+// ASTRO PROPS
 const {
 
     case_studies,
     CDN,
+    ENVIRONMENT,
     home_data,
     PROJECT,
     resources
 
 } = Astro.props
+
 ---
+<HeaderBanner ENVIRONMENT={ ENVIRONMENT } />
+<Header ENVIRONMENT={ ENVIRONMENT } />
 <Hero
     CDN={ CDN }
     data={ home_data.masthead }
@@ -69,3 +78,4 @@ const {
     PROJECT={ PROJECT }
 />
 <LetsTalk data={ home_data.lets_talk } />
+<Footer />
