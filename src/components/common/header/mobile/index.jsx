@@ -17,12 +17,12 @@ import { useState } from "react"
 const HeaderMobile = ( props ) => {
 
     // PROPS
-    const { env } = props
+    const { ENVIRONMENT } = props
 
     const [ isOpen, updateOpen ] = useState( false )
 
     return (
-        <header className={` ${ env === "staging" ? "top-12" : "top-0" } md:hidden fixed z-30 w-full bg-white`}>
+        <header className={` ${ ENVIRONMENT === "staging" ? "top-12" : "top-0" } md:hidden fixed z-30 w-full bg-white`}>
             <Container>
                 <nav className="py-4">
                     <div className="flex justify-between items-center z-30 relative h-12">

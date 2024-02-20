@@ -12,10 +12,10 @@ import Link from "@/atoms/links/index.astro"
 import PrimaryButton from "@/atoms/buttons/primary/index.astro"
 
 // ASTRO PROPS
-const { env } = Astro.props
+const { ENVIRONMENT } = Astro.props
 
 ---
-<header class={` ${ env === "staging" ? "top-10" : "top-0" } fixed w-full z-50 bg-white`}>
+<header class={` ${ ENVIRONMENT === "staging" ? "top-10" : "top-0" } fixed w-full z-50 bg-white`}>
     <Container>
         <section class="hidden md:block">
             <nav class="flex justify-between items-center h-20">
@@ -40,5 +40,5 @@ const { env } = Astro.props
 </header>
 <HeaderMobile
     client:load
-    env = { env }
+    ENVIRONMENT = { ENVIRONMENT }
 />
