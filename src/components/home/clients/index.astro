@@ -4,7 +4,7 @@
 import Container from "@/layouts/container/index.astro"
 
 // IMPORTS ASTRO COMPONENTS
-import ImageHeadingTitleDescriptionCTAAligned from "@/components/common/image-heading-title-description-cta-aligned/index.astro"
+import OurClients from "@/components/home/clients/our-clients/index.astro"
 
 const {
 
@@ -17,15 +17,13 @@ const {
 ---
 <Container>
     <section class="py-10 md:py-20">
-        <ImageHeadingTitleDescriptionCTAAligned
+        <OurClients
             alternative_text={ data.sub_title }
             CDN={ CDN }
             cta_link={ data.button_link }
             cta={ data.button_title }
             description={ data.description }
             heading={ data.title }
-            height="aspect-square"
-            is_right={ true }
             PROJECT={ PROJECT }
             source={ data.cover }
             title={ data.sub_title }

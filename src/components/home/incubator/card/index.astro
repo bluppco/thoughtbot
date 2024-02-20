@@ -19,8 +19,6 @@ const {
     cta,
     description,
     heading,
-    height,
-    is_right,
     PROJECT,
     source,
     title
@@ -30,7 +28,7 @@ const {
 const html = marked.parse( description )
 ---
 <div class="grid grid-cols-1 md:grid-cols-2 gap-20">
-    <div class={` ${ is_right ? "order-last" : "order-last md:order-none" } ${ height } w-full`}>
+    <div class="order-last md:order-none aspect-[3/2] w-full">
         <ContainPicture
             alternative_text={ alternative_text }
             CDN={ CDN }

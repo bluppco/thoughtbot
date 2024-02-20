@@ -4,7 +4,7 @@
 import Container from "@/layouts/container/index.astro"
 
 // IMPORTS ASTRO COMPONENTS
-import ImageHeadingTitleDescriptionCTAAligned from "@/components/common/image-heading-title-description-cta-aligned/index.astro"
+import IncubatorCard from "@/components/home/incubator/card/index.astro"
 
 // ASTRO PROPS
 const {
@@ -18,14 +18,13 @@ const {
 ---
 <section class="bg-thoughtbot_lavender py-20 md:py-28">
     <Container>
-        <ImageHeadingTitleDescriptionCTAAligned
+        <IncubatorCard
             alternative_text={ data.title }
             CDN={ CDN }
             cta_link={ data.button_link }
             cta={ data.button_title }
             description={ data.description }
             heading={ data.title }
-            height="aspect-[3/2]"
             PROJECT={ PROJECT }
             source={ data.cover }
             title={ data.sub_title }
