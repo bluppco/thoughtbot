@@ -4,7 +4,7 @@
 import Container from "@/layouts/container/index.astro"
 
 // IMPORTS ASTRO COMPONENTS
-import TitleDescriptionCTA from "@/components/common/title-description-cta/index.astro"
+import Resource from "@/components/home/resources/resource/index.astro"
 
 // IMPORTS ASTRO ATOMS
 import HeadingTwo from "@/atoms/headings/two/index.astro"
@@ -31,7 +31,7 @@ const {
                 data.map( ( value ) => {
 
                     return (
-                        <TitleDescriptionCTA
+                        <Resource
                             cta_link={ value.button_link }
                             cta={ value.button_title }
                             description={ value.description }
