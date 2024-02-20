@@ -40,11 +40,20 @@ cd thoughtbot
 npm install
 
 #### Start the development server
+
 npm run dev
 
 Visit http://localhost:4321 in your browser to view the cloned website.
 
 ### Details
+
+#### Variables used in .dev.vars file
+CDN
+ENDPOINT
+ENVIRONMENT
+PROJECT
+WEB_KEY_STAGING
+WEBSITE
 
 #### Fonts
 
@@ -62,8 +71,10 @@ Visit http://localhost:4321 in your browser to view the cloned website.
 
 
 ## Currently missing
+
 1. robots.txt
 2. Sitemap.xml is not rendering correctly.
 
 ## Libraries
+
 1. Rough Notation - Highlighting text - https://roughnotation.com/

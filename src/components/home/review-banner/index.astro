@@ -1,13 +1,15 @@
 ---
+
 // IMPORTS ASTRO LAYOUTS
 import Container from "@/layouts/container/index.astro"
 
 // IMPORTS ASTRO ATOMS
 import ArrowCTA from "@/atoms/buttons/arrow/index.astro"
-import Picture from "@/atoms/picture/index.astro"
 import Link from "@/atoms/links/index.astro"
+import Picture from "@/atoms/picture/index.astro"
 import PictureInternal from "@/atoms/picture/internal/contain/index.astro"
 
+// ASTRO PROPS
 const {
 
     CDN,
@@ -15,6 +17,7 @@ const {
     PROJECT
 
 } = Astro.props
+
 ---
 <section class="bg-thoughtbot_lavender py-20 my-10 md:my-20">
     <Container>
@@ -22,8 +25,8 @@ const {
             <div class="relative">
                 <div class="w-8 md:w-10 aspect-square absolute -left-1 -top-10 md:-left-12 md:-top-10">
                     <PictureInternal
-                        src="/icons/double_quote.svg"
-                        alt=""
+                        source="/icons/double_quote.svg"
+                        alternative_text="double quote icon"
                     />
                 </div>
                 <div class="md:pr-80">
@@ -34,11 +37,11 @@ const {
                 <div class="flex gap-4 items-center">
                     <div class="w-16 aspect-square rounded-full overflow-hidden">
                         <Picture
-                            alt=""
+                            alternative_text={ data.title }
                             CDN={ CDN }
                             image_width="800"
                             PROJECT={ PROJECT }
-                            src={ data.cover }
+                            source={ data.cover }
                         />
                     </div>
                     <div>
@@ -46,7 +49,7 @@ const {
                         <p class="font-calibre text-thoughtbot_slate text-xl">{ data.sub_title }</p>
                     </div>
                 </div>
-                <Link href={ data.button_link } aria_label="">
+                <Link href={ data.button_link } aria_label={ data.button_title }>
                     <ArrowCTA>{ data.button_title }</ArrowCTA>
                 </Link>
             </div>

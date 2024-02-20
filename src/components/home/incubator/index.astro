@@ -1,10 +1,12 @@
 ---
+
 // IMPORTS ASTRO LAYOUTS
 import Container from "@/layouts/container/index.astro"
 
 // IMPORTS ASTRO COMPONENTS
 import ImageHeadingTitleDescriptionCTAAligned from "@/components/common/image-heading-title-description-cta-aligned/index.astro"
 
+// ASTRO PROPS
 const {
 
     CDN,
@@ -12,11 +14,12 @@ const {
     PROJECT
 
 } = Astro.props
+
 ---
 <section class="bg-thoughtbot_lavender py-20 md:py-28">
     <Container>
         <ImageHeadingTitleDescriptionCTAAligned
-            alt={ data.title }
+            alternative_text={ data.title }
             CDN={ CDN }
             cta_link={ data.button_link }
             cta={ data.button_title }
@@ -24,7 +27,7 @@ const {
             heading={ data.title }
             height="aspect-[3/2]"
             PROJECT={ PROJECT }
-            src={ data.cover }
+            source={ data.cover }
             title={ data.sub_title }
         />
     </Container>

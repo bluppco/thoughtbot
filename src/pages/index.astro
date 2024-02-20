@@ -1,4 +1,5 @@
 ---
+
 // RUNTIME
 const runtime = Astro.locals.runtime
 
@@ -10,11 +11,12 @@ const {
     CDN,
     ENDPOINT,
     ENVIRONMENT,
-    PROJECT
+    PROJECT,
+    WEB_KEY_STAGING
 
 } = runtime.env
 
-const data = await homeAPI( runtime.env.ENVIRONMENT, runtime.env.WEB_KEY_STAGING, ENDPOINT )
+const data = await homeAPI( ENVIRONMENT, WEB_KEY_STAGING, ENDPOINT )
 
 const { home_data, case_studies, resources, meta_tags } = data
 
@@ -22,10 +24,8 @@ const { home_data, case_studies, resources, meta_tags } = data
 import Layout from "@/layouts/layout/index.astro"
 
 // IMPORTS ASTRO COMPONENTS
-import Header from "@/components/common/header/index.astro"
-import Footer from "@/components/common/footer/index.astro"
-import HeaderBanner from "@/components/home/header-banner/index.astro"
 import Home from "@/components/home/index.astro"
+
 ---
 <Layout
     CDN={ CDN }
@@ -35,14 +35,12 @@ import Home from "@/components/home/index.astro"
     PROJECT={ PROJECT }
     title={ meta_tags.title }
 >
-    <HeaderBanner env={ ENVIRONMENT } />
-    <Header env={ ENVIRONMENT } />
     <Home
         case_studies={ case_studies }
         CDN={ CDN }
+        ENVIRONMENT={ ENVIRONMENT }
         home_data={ home_data }
         PROJECT={ PROJECT }
         resources={ resources }
     />
-    <Footer />
 </Layout>

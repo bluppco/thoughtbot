@@ -1,12 +1,15 @@
 ---
+
 // IMPORTS ASTRO LAYOUTS
 import Container from "@/layouts/container/index.astro"
 
-const { env } = Astro.props
+// ASTRO PROPS
+const { ENVIRONMENT } = Astro.props
+
 ---
 {
 
-    env === "staging" &&
+    ENVIRONMENT === "staging" &&
     <section class="bg-black py-2 fixed z-50 top-0 w-full">
         <Container>
             <p class="font-calibre text-xs md:text-base text-center text-white">This is staging environment created by <span class="underline underline-offset-4 font-semibold"><a href="https://blupp.co" target="_blank">Blupp Company</a></span> with some initial <span class="underline underline-offset-4 font-semibold"><a href="/benchmarking">benchmarking</a></span>. You can check the codebase on <span class="underline underline-offset-4 font-semibold"><a href="https://github.com/bluppco/thoughtbot" target="_blank">Github</a></span>.</p>
