@@ -1,3 +1,4 @@
+// IMPORTS REACT ROUGH NOTATION
 import { RoughNotation } from "react-rough-notation"
 
 const Annotate = ( props ) => {

@@ -1,4 +1,5 @@
 ---
+
 // IMPORTS ASTRO LAYOUTS
 import Container from '@/layouts/container/index.astro'
 
@@ -10,16 +11,21 @@ import TargetBlankListItem from "@/atoms/footer/list-item/target-blank/index.ast
 import Link from "@/atoms/links/index.astro"
 import TargetBlankLink from "@/atoms/links/target-blank/index.astro"
 
+// IMPORTS COLLECTION FROM CONTENT
 import { getCollection } from 'astro:content'
 
+// FOOTER COLUMN TWO COLLECTION
 let footer_column_two = await getCollection('footer-column-two')
 footer_column_two = footer_column_two.sort((a, b) => a.data.order - b.data.order).filter( ( item ) => item.data.live )
 
+// FOOTER COLUMN THREE COLLECTION
 let footer_column_three = await getCollection('footer-column-three')
 footer_column_three = footer_column_three.sort((a, b) => a.data.order - b.data.order).filter( ( item ) => item.data.live )
 
+// FOOTER COLUMN FOUR COLLECTION
 let footer_column_four = await getCollection('footer-column-four')
 footer_column_four = footer_column_four.sort((a, b) => a.data.order - b.data.order).filter( ( item ) => item.data.live )
+
 ---
 <footer class="bg-thoughtbot_black text-slate-50 py-16">
     <Container>
@@ -38,7 +44,7 @@ footer_column_four = footer_column_four.sort((a, b) => a.data.order - b.data.ord
                             if ( index < 3 ) {
 
                                 return(
-                                    <ListItem href={ value.data.link } aria_label="">{ value.data.title }</ListItem>
+                                    <ListItem href={ value.data.link } aria_label={ value.data.title }>{ value.data.title }</ListItem>
                                 )
 
                             }
@@ -47,7 +53,7 @@ footer_column_four = footer_column_four.sort((a, b) => a.data.order - b.data.ord
 
                     }
                     <li class="text-lg md:text-xl underline hover:no-underline text-thoughtbot_light_orange hover:text-thoughtbot_light_red font-calibre transition-all duration-200 cursor-pointer">
-                        <Link href="/hire-us" aria_label="">Let's Talk</Link>
+                        <Link href="/hire-us" aria_label="Let's Talk">Let's Talk</Link>
                     </li>
                 </ul>
                 <div class="flex md:justify-end">
@@ -59,7 +65,7 @@ footer_column_four = footer_column_four.sort((a, b) => a.data.order - b.data.ord
                                 if ( index < 4 ) {
 
                                     return(
-                                        <ListItem href={ value.data.link } aria_label="">{ value.data.title }</ListItem>
+                                        <ListItem href={ value.data.link } aria_label={ value.data.title }>{ value.data.title }</ListItem>
                                     )
 
                                 }
@@ -67,7 +73,7 @@ footer_column_four = footer_column_four.sort((a, b) => a.data.order - b.data.ord
                             })
 
                         }
-                        <TargetBlankListItem href="https://github.com/sponsors/thoughtbot">Sponsor</TargetBlankListItem>
+                        <TargetBlankListItem href="https://github.com/sponsors/thoughtbot" aria-label="Sponsor">Sponsor</TargetBlankListItem>
                     </ul>
                 </div>
                 <div class="flex md:justify-end">
@@ -77,7 +83,7 @@ footer_column_four = footer_column_four.sort((a, b) => a.data.order - b.data.ord
                             footer_column_four.map( ( value ) => {
 
                                 return(
-                                <TargetBlankListItem href={ value.data.link }>{ value.data.title }</TargetBlankListItem>
+                                <TargetBlankListItem href={ value.data.link } aria_label={ value.data.title }>{ value.data.title }</TargetBlankListItem>
                                 )
 
                             })
@@ -92,28 +98,28 @@ footer_column_four = footer_column_four.sort((a, b) => a.data.order - b.data.ord
             </div>
             <div class="space-y-4 md:space-y-0">
                 <div class="flex flex-col md:flex-row md:gap-4">
-                    <Link href="tel:+18779762687" aria_label="">
+                    <Link href="tel:+18779762687" aria_label="contact us office">
                         <span class="text-thoughtbot_zinc font-calibre underline hover:no-underline md:text-lg">US: +1 (877) 9-ROBOTS</span>
                     </Link>
-                    <Link href="tel:+442038070560" aria_label="">
+                    <Link href="tel:+442038070560" aria_label="contact uk office">
                         <span class="text-thoughtbot_zinc font-calibre underline hover:no-underline md:text-lg">UK: +44 (0)20 3807 0560</span>
                     </Link>
                 </div>
                 <div>
                     <span class="text-thoughtbot_zinc font-calibre md:text-lg">Beware of fraudulent thoughtbot job listings</span>
-                    <Link href="blog/fraud-alert-scammers-using-thoughtbot-name-and-logo-for-fake-app-optimization-job" aria_label="">
+                    <Link href="blog/fraud-alert-scammers-using-thoughtbot-name-and-logo-for-fake-app-optimization-job" aria_label="Learn more">
                         <span class="text-thoughtbot_zinc font-calibre underline hover:no-underline md:text-lg hover:cursor-pointer">Learn more</span>
                     </Link>
                 </div>
                 <ul class="flex flex-wrap gap-x-4">
                     <li class="text-thoughtbot_zinc font-calibre underline hover:no-underline md:text-lg hover:cursor-pointer">
-                        <Link href="/open-source-code-of-conduct" aria_label="">Code of Conduct</Link>
+                        <Link href="/open-source-code-of-conduct" aria_label="Code of Conduct">Code of Conduct</Link>
                     </li>
                     <li class="text-thoughtbot_zinc font-calibre underline hover:no-underline md:text-lg hover:cursor-pointer">
-                        <Link href="/accessibility-statement" aria_label="">Accessibility Statement</Link>
+                        <Link href="/accessibility-statement" aria_label="Accessibility Statement">Accessibility Statement</Link>
                     </li>
                     <li class="text-thoughtbot_zinc font-calibre underline hover:no-underline md:text-lg hover:cursor-pointer">
-                        <TargetBlankLink href="https://www.iubenda.com/privacy-policy/7827608" aria_label="">Privacy Policy</TargetBlankLink>
+                        <TargetBlankLink href="https://www.iubenda.com/privacy-policy/7827608" aria_label="Privacy Policy">Privacy Policy</TargetBlankLink>
                     </li>
                 </ul>
             </div>

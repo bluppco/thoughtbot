@@ -1,4 +1,5 @@
 ---
+
 // IMPORTS ASTRO LAYOUTS
 import Container from "@/layouts/container/index.astro"
 
@@ -7,13 +8,15 @@ import HeadingTwoWhite from "@/atoms/headings/two/white/index.astro"
 import LargeWhiteButton from "@/atoms/buttons/primary/large/white/index.astro"
 import Link from "@/atoms/links/index.astro"
 
+// ASTRO PROPS
 const { data } = Astro.props
+
 ---
 <section class="py-10 md:py-20 bg-thoughtbot_light_red">
     <Container>
         <div class="md:flex justify-between items-center space-y-4 md:space-y-0">
             <HeadingTwoWhite>{ data.title }</HeadingTwoWhite>
-            <Link href={ data.button_link } aria_label="">
+            <Link href={ data.button_link } aria_label={ data.button_title }>
                 <LargeWhiteButton>{ data.button_title }</LargeWhiteButton>
             </Link>
         </div>

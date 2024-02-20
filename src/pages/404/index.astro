@@ -1,11 +1,18 @@
 ---
+
+// RUNTIME
+const runtime = Astro.locals.runtime
+const { ENVIRONMENT } = runtime.env
+
 // IMPORTS ASTRO LAYOUTS
 import Layout from "@/layouts/layout/index.astro"
 
 // IMPORTS ASTRO COMPONENTS
 import Footer from "@/components/common/footer/index.astro"
 import Header from "@/components/common/header/index.astro"
+import HeaderBanner from "@/components/home/header-banner/index.astro"
 import NotFoundView from "@/components/common/404/not-found/index.astro"
+
 ---
 <Layout
 	title="4O4 PAGE NOT FOUND"
@@ -13,7 +20,8 @@ import NotFoundView from "@/components/common/404/not-found/index.astro"
 	image=""
 >
     <section class="h-screen max-h-screen">
-        <Header />
+        <HeaderBanner ENVIRONMENT={ ENVIRONMENT } />
+        <Header ENVIRONMENT={ ENVIRONMENT } />
         <NotFoundView />
     </section>
 	<Footer />

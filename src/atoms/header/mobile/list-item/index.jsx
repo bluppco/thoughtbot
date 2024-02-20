@@ -1,13 +1,14 @@
 // IMPORTS ATOMS
 import Link from "@/atoms/links/jsx/index.jsx"
 
-const Li = ( props ) =>{
+const ListItem = ( props ) =>{
 
-    const { href } = props
+    // PROPS
+    const { aria_label, href } = props
 
     return(
         <li className="font-calibre">
-            <Link href={ href } aria_label="">
+            <Link href={ href } aria_label={ aria_label }>
                 { props.children }
             </Link>
         </li>
@@ -16,4 +17,4 @@ const Li = ( props ) =>{
 
 }
 
-export default Li
+export default ListItem
