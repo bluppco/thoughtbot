@@ -39,15 +39,11 @@ footer_column_four = footer_column_four.sort((a, b) => a.data.order - b.data.ord
                 <ul>
                     {
 
-                        footer_column_two.map( ( value, index ) => {
+                        footer_column_two.slice(0,3).map( ( value, index ) => {
 
-                            if ( index < 3 ) {
-
-                                return(
-                                    <ListItem href={ value.data.link } aria_label={ value.data.title }>{ value.data.title }</ListItem>
-                                )
-
-                            }
+                            return(
+                                <ListItem href={ value.data.link } aria_label={ value.data.title }>{ value.data.title }</ListItem>
+                            )
 
                         })
 
@@ -60,15 +56,11 @@ footer_column_four = footer_column_four.sort((a, b) => a.data.order - b.data.ord
                     <ul>
                         {
 
-                            footer_column_three.map( ( value, index ) => {
+                            footer_column_three.slice(0,4).map( ( value, index ) => {
 
-                                if ( index < 4 ) {
-
-                                    return(
-                                        <ListItem href={ value.data.link } aria_label={ value.data.title }>{ value.data.title }</ListItem>
-                                    )
-
-                                }
+                                return(
+                                    <ListItem href={ value.data.link } aria_label={ value.data.title }>{ value.data.title }</ListItem>
+                                )
 
                             })
 
@@ -83,7 +75,7 @@ footer_column_four = footer_column_four.sort((a, b) => a.data.order - b.data.ord
                             footer_column_four.map( ( value ) => {
 
                                 return(
-                                <TargetBlankListItem href={ value.data.link } aria_label={ value.data.title }>{ value.data.title }</TargetBlankListItem>
+                                    <TargetBlankListItem href={ value.data.link } aria_label={ value.data.title }>{ value.data.title }</TargetBlankListItem>
                                 )
 
                             })
