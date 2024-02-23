@@ -29,8 +29,8 @@ const HeaderMobile = ( props ) => {
                         <Link href="/" aria_label="thoughbot mobile logo">
                             <div className="w-10 aspect-square">
                                 <PictureInternalContain
-                                    source="/logos/logo.svg"
                                     alternative_text="thoughbot mobile logo"
+                                    source="/logos/logo.svg"
                                 />
                             </div>
                         </Link>
@@ -42,8 +42,8 @@ const HeaderMobile = ( props ) => {
                                     isOpen &&
                                     <div className="w-8 aspect-square">
                                         <PictureInternalContain
-                                            source="/icons/close.svg"
                                             alternative_text="close icon"
+                                            source="/icons/close.svg"
                                         />
                                     </div>
 
@@ -53,8 +53,8 @@ const HeaderMobile = ( props ) => {
                                     !isOpen &&
                                     <div className="w-8 aspect-square">
                                         <PictureInternalContain
-                                            source="/icons/menu.svg"
                                             alternative_text="menu icon"
+                                            source="/icons/menu.svg"
                                         />
                                     </div>
 
