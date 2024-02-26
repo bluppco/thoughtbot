@@ -48,11 +48,11 @@ Visit http://localhost:4321 in your browser to view the cloned website.
 ### Details
 
 #### Variables used in .dev.vars file
-CDN
-ENDPOINT
-ENVIRONMENT
-PROJECT
-WEB_KEY_STAGING
+CDN\
+ENDPOINT\
+ENVIRONMENT\
+PROJECT\
+WEB_KEY_STAGING\
 WEBSITE
 
 #### Fonts
